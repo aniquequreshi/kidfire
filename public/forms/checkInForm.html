@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>
+        Check In Patient
+    </title>
+    <style>
+        body {
+            background-color: lightsteelblue;
+        }
+
+        #flash {
+            display: none;
+            background-color: rgb(8, 112, 13);
+            color: #fff
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <br/>
+    <div style="margin:0 auto;width:75%;text-align:left">
+        <h1>Check In</h1>
+        <form id="checkInForm" autocomplete="off" novalidate>
+
+            <h4>What is the child/patient's date of birth?
+                <input type="date" required name="dob" value=0 id="dob" />
+            </h4>
+            <div id="flash">
+                <H1>Patient has been Checked In. Please have a seat and we will call you.</H1>
+            </div>
+            
+            <br/>
+            <br/>
+            <input type="Submit" value="Check In" />
+            <br/>
+            
+
+        </form>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBImyqi96ixDENotso6AuW-XYKBZ8i6QzY",
+            authDomain: "kidsneur.firebaseapp.com",
+            databaseURL: "https://kidsneur.firebaseio.com",
+            projectId: "kidsneur",
+            storageBucket: "kidsneur.appspot.com",
+            messagingSenderId: "1025459044469"
+        };
+        firebase.initializeApp(config);
+
+        var xxxRef = firebase.database().ref('checkIn');
+
+        document.getElementById("checkInForm").addEventListener("submit", submitForm);
+
+        function submitForm(e) {
+            e.preventDefault();
+            var dob = getInputValues("dob");
+
+
+
+
+            saveData(dob);
+            //alert("Successfully Submitted");
+            $('#checkInForm')[0].reset();
+            //window.location = "../";
+        }
+
+        function saveData(dob) {
+            var newRef = xxxRef.push();
+            newRef.set({
+                dob: dob,
+                trashed: false,
+                createdAt: Date.now()
+            });
+            $('#flash').delay(500).fadeIn('normal', function () {
+                $(this).delay(3500).fadeOut();
+            });
+        }
+
+
+
+        function getInputValues(id) {
+            return document.getElementById(id).value;
+        }
+    </script>
+
+</body>
+
+</html>

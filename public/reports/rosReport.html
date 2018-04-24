@@ -1,0 +1,907 @@
+<html>
+
+<head>
+    <title>ROS Report - Kids Neurology</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style type="text/css">
+        textarea {
+            width: 800px;
+            height: 350px;
+            background-color: lightyellow;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="/reports">Home</a>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button onClick='logout()'>Logout</button>
+    <br>
+
+    <h1>ROS Report</h1>
+
+    <br>
+    <div id="displayGrid">
+
+    </div>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBImyqi96ixDENotso6AuW-XYKBZ8i6QzY",
+            authDomain: "kidsneur.firebaseapp.com",
+            databaseURL: "https://kidsneur.firebaseio.com",
+            projectId: "kidsneur",
+            storageBucket: "kidsneur.appspot.com",
+            messagingSenderId: "1025459044469"
+        };
+        firebase.initializeApp(config);
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in.
+                startUp();
+            } else {
+                // No user is signed in.
+                window.location = "../login.html";
+            }
+        });
+
+        var xxxRef = firebase.database().ref('ros');
+
+
+        $(document).ready(startUp);
+        //window.onload = startUp;
+
+
+        //document.getElementById("get-follow-up-medical-history-form").addEventListener("submit", submitForm);
+        function logout() {
+            //alert("logging out");
+            firebase.auth().signOut();
+        }
+
+        function startUp() {
+            readDataContinuously();
+        }
+
+        // NOT USED, BUT IS GOOD FOR READ ONCE
+        // Do NOT delete
+        /* function readDataOnce() {
+ 
+            //document.getElementById("reportText").value = "";
+            //var displayGrid = "";
+            var userDataRef = followUpMedHxRef.orderByChild('trashed').equalTo(false).limitToLast(100);
+            userDataRef.once("value").then(function (snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                    //console.log(snapshot.val());
+                    var key = childSnapshot.key;
+                    var childData = childSnapshot.val();
+ 
+                    var chiefComplaint_val = childSnapshot.val().chiefComplaint;
+                    var gender_val = childSnapshot.val().gender;
+                    var chartNumber_val = childSnapshot.val().chartNumber;
+                    var key_val = childSnapshot.key;
+                    var trashed_val = childSnapshot.val().trashed;
+ 
+ 
+                    displayGrid += "<input type='button' onclick='copyToClipboard(\"" + key_val + "\")' value='SELECT ALL Chart Number: " + chartNumber_val + "'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+ 
+                    displayGrid += "<input type='button' onclick='trashChart(\"" + key_val + "\")' value='DELETE Chart Number: " + chartNumber_val + "'/><BR><BR>";
+                    
+                    displayGrid += "<textarea id='ta_" + key_val + "'>" + reportText + "</textarea>";
+                    
+                    var reportText = "";
+                    reportText += "Chart Number: " + chartNumber_val + "\n\n";
+                    reportText += "Chief Complaint: " + chiefComplaint_val + "\n\n";
+                    //document.getElementById("reportText").value = reportText;
+ 
+                    
+ 
+                    //document.getElementById("displayGrid").innerHTML = displayGrid;
+                    //displayGrid += "<input type='button' onclick='patientSelected(\"" + key_val + "\")' value='" + chartNumber_val + "'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+                    //displayGrid += "<label>" + chartNumber_val + "</label>&nbsp;&nbsp;&nbsp;&nbsp;";
+ 
+                });
+                //WORKS: To append to display grid
+                $("#displayGrid").append(displayGrid);
+                //readDataContinuously();
+            });
+ 
+        }
+ */
+        function readDataContinuously() { }
+        var displayGrid = "";
+        //document.getElementById("reportText").value = "";
+        //will retrieve data of newly added child along with previous child's key
+        var userDataRef = xxxRef.orderByChild('trashed').equalTo(false);
+        userDataRef.on("child_added", function (data) {
+            var childData = data.val();
+            var primaryKey = data.key;
+            var chartNumber = childData.chartNumber;
+            var completedByRelationship = childData.completedByRelationship;
+            var trashed = childData.trashed;
+            var createdAt = new Date(childData.createdAt);
+
+            var recurrentFever = childData.recurrentFever;
+            var weightLoss = childData.weightLoss;
+            var lethary = childData.lethary;
+            var hyperactive = childData.hyperactive;
+            var wearsGlasses = childData.wearsGlasses;
+            var visionChecked = childData.visionChecked;
+            var abnormalEyeMovements = childData.abnormalEyeMovements;
+            var blurredVision = childData.blurredVision;
+            var doubleVision = childData.doubleVision;
+            var hearingProblems = childData.hearingProblems;
+            var tonsilProblems = childData.tonsilProblems;
+            var adenoidProblems = childData.adenoidProblems;
+            var stuffyNose = childData.stuffyNose;
+            var breathingByMouth = childData.breathingByMouth;
+            var snoring = childData.snoring;
+            var ringingInEars = childData.ringingInEars;
+            var vertigoDizziness = childData.vertigoDizziness;
+            var asd = childData.asd;
+            var vsd = childData.vsd;
+            var murmur = childData.murmur;
+            var vomiting = childData.vomiting;
+            var diarrhea = childData.diarrhea;
+            var constipation = childData.constipation;
+            var abdominalPain = childData.abdominalPain;
+            var feedingDifficulty = childData.feedingDifficulty;
+            var anemia = childData.anemia;
+            var sickelCell = childData.sickelCell;
+            var adhd = childData.adhd;
+            var odd = childData.odd;
+            var bipolar = childData.bipolar;
+            var schizophrenia = childData.schizophrenia;
+            var suicidal = childData.suicidal;
+            var illicitDrugUse = childData.illicitDrugUse;
+            var anxiety = childData.anxiety;
+            var depression = childData.depression;
+            var hallucination = childData.hallucination;
+            var aggression = childData.aggression;
+            var diabetes = childData.diabetes;
+            var hypothyroidism = childData.hypothyroidism;
+            var hyperthyroidism = childData.hyperthyroidism;
+            var asthma = childData.asthma;
+            var reactiveAirwayDisease = childData.reactiveAirwayDisease;
+            var bronchitis = childData.bronchitis;
+            var bronchiolitis = childData.bronchiolitis;
+            var urinaryIncontinence = childData.urinaryIncontinence;
+            var urinaryReflux = childData.urinaryReflux;
+            var urinaryTractInfection = childData.urinaryTractInfection;
+            var difficultyInWalking = childData.difficultyInWalking;
+            var flatFoot = childData.flatFoot;
+            var scoliosis = childData.scoliosis;
+            var fractures = childData.fractures;
+            var rashHives = childData.rashHives;
+            var birthmarks = childData.birthmarks;
+            var bumps = childData.bumps;
+            var drugAllergies = childData.drugAllergies;
+            var seasonal = childData.seasonal;
+            var immune = childData.immune;
+            var seizures = childData.seizures;
+            var staringEpisodes = childData.staringEpisodes;
+            var confusion = childData.confusion;
+            var developmentalDelay = childData.developmentalDelay;
+            var mentalRetardation = childData.mentalRetardation;
+            var cerebralPalsy = childData.cerebralPalsy;
+            var headache = childData.headache;
+            var difficultyInTalking = childData.difficultyInTalking;
+            var difficultyInSwallowing = childData.difficultyInSwallowing;
+            var tumor = childData.tumor;
+            var brainDamage = childData.brainDamage;
+            var shunt = childData.shunt;
+            var aneurysm = childData.aneurysm;
+
+            //------------------------------------------------------
+            var fullReportText = "";
+            var reportText = "";
+            var significantROS = "";
+
+            fullReportText += "Chart Number: " + chartNumber + "\n\n";
+
+            reportText += "\n";
+            reportText += "CONSTITUTIONAL" + "\n";
+
+
+            if (recurrentFever == "yes") {
+                significantROS += "Recurrent Fever, ";
+                reportText += "+Recurrent Fever: Yes\n";
+            }
+            else {
+                reportText += "-Recurrent Fever: No\n";
+            }
+
+            if (weightLoss == "yes") {
+                significantROS += "Weight Loss, ";
+                reportText += "+Weight Loss: Yes\n";
+            }
+            else {
+                reportText += "-Weight Loss: No\n";
+            }
+
+            if (lethary == "yes") {
+                significantROS += "Lethargy, ";
+                reportText += "+Lethargy: Yes\n";
+            }
+            else {
+                reportText += "-Lethargy: No\n";
+            }
+
+            if (hyperactive == "yes") {
+                significantROS += "Hyperactive, ";
+                reportText += "+Hyperactive: Yes\n";
+            }
+            else {
+                reportText += "-Hyperactive: No\n";
+            }
+
+            reportText += "\n";
+            reportText += "EYES" + "\n";
+
+            if (wearsGlasses == "yes") {
+                significantROS += "Wears Glasses, ";
+                reportText += "+Wears Glasses: Yes\n";
+            }
+            else {
+                reportText += "-Wears Glasses: No\n";
+            }
+
+            if (visionChecked == "yes") {
+                significantROS += "Vision Checked More than Six Months ago, "; reportText += "+Vision Checked More than Six Months ago: Yes\n";
+            }
+            else {
+                reportText += "-Vision Checked More than Six Months ago: No\n";
+            }
+
+            if (abnormalEyeMovements == "yes") {
+                significantROS += "Abnormal Eye Movements, ";
+                reportText += "+Abnormal Eye Movements: Yes\n";
+            }
+            else {
+                reportText += "-Abnormal Eye Movements: No\n";
+            }
+
+            if (blurredVision == "yes") {
+                significantROS += "Blurred Vision, ";
+                reportText += "+Blurred Vision: Yes\n";
+            }
+            else {
+                reportText += "-Blurred Vision: No\n";
+            }
+
+            if (doubleVision == "yes") {
+                significantROS += "Double Vision, ";
+                reportText += "+Double Vision: Yes\n";
+            }
+            else {
+                reportText += "-Double Vision: No\n";
+            }
+
+            reportText += "\n";
+            reportText += "EAR, NOSE, MOUTH AND THROAT" + "\n";
+
+            if (hearingProblems == "yes") {
+                significantROS += "Hearing Problems, ";
+                reportText += "+Hearing Problems: Yes\n";
+            }
+            else {
+                reportText += "-Hearing Problems: No\n";
+            }
+
+            if (tonsilProblems == "yes") {
+                significantROS += "Tonsil Problems, ";
+                reportText += "+Tonsil Problems: Yes\n";
+            }
+            else {
+                reportText += "-Tonsil Problems: No\n";
+            }
+
+            if (adenoidProblems == "yes") {
+                significantROS += "Adenoid Problems, ";
+                reportText += "+Adenoid Problems: Yes\n";
+            }
+            else {
+                reportText += "-Adenoid Problems: No\n";
+            }
+
+            if (stuffyNose == "yes") {
+                significantROS += "Stuffy Nose, ";
+                reportText += "+Stuffy Nose: Yes\n";
+            }
+            else {
+                reportText += "-Stuffy Nose: No\n";
+            }
+
+            if (breathingByMouth == "yes") {
+                significantROS += "Breathing by Mouth, ";
+                reportText += "+Breathing by Mouth: Yes\n";
+            }
+            else {
+                reportText += "-Breathing by Mouth: No\n";
+            }
+
+            if (snoring == "yes") {
+                significantROS += "Snoring, ";
+                reportText += "+Snoring: Yes\n";
+            }
+            else {
+                reportText += "-Snoring: No\n";
+            }
+
+            if (ringingInEars == "yes") {
+                significantROS += "Ringing in Ears, ";
+                reportText += "+Ringing in Ears: Yes\n";
+            }
+            else {
+                reportText += "-Ringing in Ears: No\n";
+            }
+
+            if (vertigoDizziness == "yes") {
+                significantROS += "Vertigo/Dizziness, ";
+                reportText += "+Vertigo/Dizziness: Yes\n";
+            }
+            else {
+                reportText += "-Vertigo/Dizziness: No\n";
+            }
+
+            reportText += "\n";
+            reportText += "CARDIOVASCULAR" + "\n";
+
+            if (asd == "yes") {
+                significantROS += "ASD, ";
+                reportText += "+ASD: Yes\n";
+            }
+            else {
+                reportText += "-ASD: No\n";
+            }
+
+            if (vsd == "yes") {
+                significantROS += "VSD, ";
+                reportText += "+VSD: Yes\n";
+            }
+            else {
+                reportText += "-VSD: No\n";
+            }
+
+            if (murmur == "yes") {
+                significantROS += "Heart Murmer, ";
+                reportText += "+Heart Murmer: Yes\n";
+            }
+            else {
+                reportText += "-Heart Murmer: No\n";
+            }
+
+            reportText += "\n";
+            reportText += "GASTROINTESTINAL" + "\n";
+
+            if (vomiting == "yes") {
+                significantROS += "Vomiting, ";
+                reportText += "+Vomiting: Yes\n";
+            }
+            else {
+                reportText += "-Vomiting: No\n";
+            }
+
+            if (diarrhea == "yes") {
+                significantROS += "Diarrhea, ";
+                reportText += "+Diarrhea: Yes\n";
+            }
+            else {
+                reportText += "-Diarrhea: No\n";
+            }
+
+            if (constipation == "yes") {
+                significantROS += "Constipation, ";
+                reportText += "+Constipation: Yes\n";
+            }
+            else {
+                reportText += "-Constipation: No\n";
+            }
+
+            if (abdominalPain == "yes") {
+                significantROS += "Abdominal Pain, ";
+                reportText += "+Abdominal Pain: Yes\n";
+            }
+            else {
+                reportText += "-Abdominal Pain: No\n";
+            }
+
+            if (feedingDifficulty == "yes") {
+                significantROS += "Feeding Difficulty, ";
+                reportText += "+Feeding Difficulty: Yes\n";
+            }
+            else {
+                reportText += "-Feeding Difficulty: No\n";
+            }
+
+            reportText += "\n";
+            reportText += "HEMATOLOGIC/LYMPHATIC" + "\n";
+
+            if (anemia == "yes") {
+                significantROS += "Anemia, ";
+                reportText += "+Anemia: Yes\n";
+            }
+            else {
+                reportText += "-Anemia: No\n";
+            }
+
+            if (sickelCell == "yes") {
+                significantROS += "Sickle Cell, ";
+                reportText += "+Sickle Cell: Yes\n";
+            }
+            else {
+                reportText += "-Sickle Cell: No\n";
+            }
+
+            reportText += "\n";
+            reportText += "PSYCHIATRIC" + "\n";
+
+            if (adhd == "yes") {
+                significantROS += "ADHD, ";
+                reportText += "+ADHD: Yes\n";
+            }
+            else {
+                reportText += "-ADHD: No\n";
+            }
+
+            if (odd == "yes") {
+                significantROS += "ODD, ";
+                reportText += "+ODD: Yes\n";
+            }
+            else {
+                reportText += "-ODD: No\n";
+            }
+
+            if (bipolar == "yes") {
+                significantROS += "Bipolar, ";
+                reportText += "+Bipolar: Yes\n";
+            }
+            else {
+                reportText += "-Bipolar: No\n";
+            }
+
+            if (schizophrenia == "yes") {
+                significantROS += "Schizophrenia, ";
+                reportText += "+Schizophrenia: Yes\n";
+            }
+            else {
+                reportText += "-Schizophrenia: No\n";
+            }
+
+            if (suicidal == "yes") {
+                significantROS += "Suicidal, ";
+                reportText += "+Suicidal: Yes\n";
+            }
+            else {
+                reportText += "-Suicidal: No\n";
+            }
+
+            if (illicitDrugUse == "yes") {
+                significantROS += "Illicit Drug Use, ";
+                reportText += "+Illicit Drug Use: Yes\n";
+            }
+            else {
+                reportText += "-Illicit Drug Use: No\n";
+            }
+
+            if (anxiety == "yes") {
+                significantROS += "Anxiety, ";
+                reportText += "+Anxiety: Yes\n";
+            }
+            else {
+                reportText += "-Anxiety: No\n";
+            }
+
+            if (depression == "yes") {
+                significantROS += "Depression, ";
+                reportText += "+Depression: Yes\n";
+            }
+            else {
+                reportText += "-Depression: No\n";
+            }
+
+            if (hallucination == "yes") {
+                significantROS += "Hallucination, ";
+                reportText += "+Hallucination: Yes\n";
+            }
+            else {
+                reportText += "-Hallucination: No\n";
+            }
+
+            if (aggression == "yes") {
+                significantROS += "Aggression, ";
+                reportText += "+Aggression: Yes\n";
+            }
+            else {
+                reportText += "-Aggression: No\n";
+            }
+
+            reportText += "\n";
+            reportText += "ENDOCRINE" + "\n";
+
+            if (diabetes == "yes") {
+                significantROS += "Diabetes, ";
+                reportText += "+Diabetes: Yes\n";
+            }
+            else {
+                reportText += "-Diabetes: No\n";
+            }
+
+            if (hypothyroidism == "yes") {
+                significantROS += "Hypothyroidism, ";
+                reportText += "+Hypothyroidism: Yes\n";
+            }
+            else {
+                reportText += "-Hypothyroidism: No\n";
+            }
+
+            if (hyperthyroidism == "yes") {
+                significantROS += "Hyperthyroidism, ";
+                reportText += "+Hyperthyroidism: Yes\n";
+            }
+            else {
+                reportText += "-Hyperthyroidism: No\n";
+            }
+
+            reportText += "\n";
+            reportText += "RESPIRATORY" + "\n";
+
+            if (asthma == "yes") {
+                significantROS += "Asthma, ";
+                reportText += "+Asthma: Yes\n";
+            }
+            else {
+                reportText += "-Asthma: No\n";
+            }
+
+            if (reactiveAirwayDisease == "yes") {
+                significantROS += "Reactive Airway Disease, ";
+                reportText += "+Reactive Airway Disease: Yes\n";
+            }
+            else {
+                reportText += "-Reactive Airway Disease: No\n";
+            }
+
+            if (bronchitis == "yes") {
+                significantROS += "Bronchitis, ";
+                reportText += "+Bronchitis: Yes\n";
+            }
+            else {
+                reportText += "-Bronchitis: No\n";
+            }
+
+            if (bronchiolitis == "yes") {
+                significantROS += "Bronchiolitis, ";
+                reportText += "+Bronchiolitis: Yes\n";
+            }
+            else {
+                reportText += "-Bronchiolitis: No\n";
+            }
+
+            reportText += "\n";
+            reportText += "GENITOURINARY" + "\n";
+
+            if (urinaryIncontinence == "yes") {
+                significantROS += "Urinary Incontinence, ";
+                reportText += "+Urinary Incontinence: Yes\n";
+            }
+            else {
+                reportText += "-Urinary Incontinence: No\n";
+            }
+
+            if (urinaryReflux == "yes") {
+                significantROS += "Urinary Reflux, ";
+                reportText += "+Urinary Reflux: Yes\n";
+            }
+            else {
+                reportText += "-Urinary Reflux: No\n";
+            }
+
+            if (urinaryTractInfection == "yes") {
+                significantROS += "Urinary Tract Infection, ";
+                reportText += "+Urinary Tract Infection: Yes\n";
+            }
+            else {
+                reportText += "-Urinary Tract Infection: No\n";
+            }
+
+            reportText += "\n";
+            reportText += "MUSCULOSKELETAL" + "\n";
+
+            if (difficultyInWalking == "yes") {
+                significantROS += "Difficulty in Walking, ";
+                reportText += "+Difficulty in Walking: Yes\n";
+            }
+            else {
+                reportText += "-Difficulty in Walking: No\n";
+            }
+
+            if (flatFoot == "yes") {
+                significantROS += "Flat Foot, ";
+                reportText += "+Flat Foot: Yes\n";
+            }
+            else {
+                reportText += "-Flat Foot: No\n";
+            }
+
+            if (scoliosis == "yes") {
+                significantROS += "Scoliosis, ";
+                reportText += "+Scoliosis: Yes\n";
+            }
+            else {
+                reportText += "-Scoliosis: No\n";
+            }
+
+            if (fractures == "yes") {
+                significantROS += "Fractures, ";
+                reportText += "+Fractures: Yes\n";
+            }
+            else {
+                reportText += "-Fractures: No\n";
+            }
+
+            reportText += "\n";
+            reportText += "INTEGUMENTARY/SKIN" + "\n";
+
+            if (rashHives == "yes") {
+                significantROS += "Rash/Hives, ";
+                reportText += "+Rash/Hives: Yes\n";
+            }
+            else {
+                reportText += "-Rash/Hives: No\n";
+            }
+
+            if (birthmarks == "yes") {
+                significantROS += "Birthmarks, ";
+                reportText += "+Birthmarks: Yes\n";
+            }
+            else {
+                reportText += "-Birthmarks: No\n";
+            }
+
+            if (bumps == "yes") {
+                significantROS += "Bumps, ";
+                reportText += "+Bumps: Yes\n";
+            }
+            else {
+                reportText += "-Bumps: No\n";
+            }
+
+            reportText += "\n";
+            reportText += "ALLERGIC/IMMUNOLOGIC" + "\n";
+
+            if (drugAllergies == "yes") {
+                significantROS += "Drug Allergies, ";
+                reportText += "+Drug Allergies: Yes\n";
+            }
+            else {
+                reportText += "-Drug Allergies: No\n";
+            }
+
+            if (seasonal == "yes") {
+                significantROS += "Seasonal Allergies, ";
+                reportText += "+Seasonal Allergies: Yes\n";
+            }
+            else {
+                reportText += "-Seasonal Allergies: No\n";
+            }
+
+            if (immune == "yes") {
+                significantROS += "Immune Disease, ";
+                reportText += "+Immune Disease: Yes\n";
+            }
+            else {
+                reportText += "-Immune Disease: No\n";
+            }
+
+            reportText += "\n";
+            reportText += "NEUROLOGICAL" + "\n";
+
+            if (seizures == "yes") {
+                significantROS += "Seizures, ";
+                reportText += "+Seizures: Yes\n";
+            }
+            else {
+                reportText += "-Seizures: No\n";
+            }
+
+            if (staringEpisodes == "yes") {
+                significantROS += "Staring Episodes, ";
+                reportText += "+Staring Episodes: Yes\n";
+            }
+            else {
+                reportText += "-Staring Episodes: No\n";
+            }
+
+            if (confusion == "yes") {
+                significantROS += "Confusion, ";
+                reportText += "+Confusion: Yes\n";
+            }
+            else {
+                reportText += "-Confusion: No\n";
+            }
+
+            if (developmentalDelay == "yes") {
+                significantROS += "Developmental Delay, ";
+                reportText += "+Developmental Delay: Yes\n";
+            }
+            else {
+                reportText += "-Developmental Delay: No\n";
+            }
+
+            if (mentalRetardation == "yes") {
+                significantROS += "Mental Retardation, ";
+                reportText += "+Mental Retardation: Yes\n";
+            }
+            else {
+                reportText += "-Mental Retardation: No\n";
+            }
+
+            if (cerebralPalsy == "yes") {
+                significantROS += "Cerebral Palsy, ";
+                reportText += "+Cerebral Palsy: Yes\n";
+            }
+            else {
+                reportText += "-Cerebral Palsy: No\n";
+            }
+
+            if (headache == "yes") {
+                significantROS += "Headache, ";
+                reportText += "+Headache: Yes\n";
+            }
+            else {
+                reportText += "-Headache: No\n";
+            }
+
+            if (difficultyInTalking == "yes") {
+                significantROS += "Difficulty in Talking, ";
+                reportText += "+Difficulty in Talking: Yes\n";
+            }
+            else {
+                reportText += "-Difficulty in Talking: No\n";
+            }
+
+            if (difficultyInSwallowing == "yes") {
+                significantROS += "Difficulty in Swallowing, ";
+                reportText += "+Difficulty in Swallowing: Yes\n";
+            }
+            else {
+                reportText += "-Difficulty in Swallowing: No\n";
+            }
+
+            if (tumor == "yes") {
+                significantROS += "Tumor, ";
+                reportText += "+Tumor: Yes\n";
+            }
+            else {
+                reportText += "-Tumor: No\n";
+            }
+
+            if (brainDamage == "yes") {
+                significantROS += "Brain Damage, ";
+                reportText += "+Brain Damage: Yes\n";
+            }
+            else {
+                reportText += "-Brain Damage: No\n";
+            }
+
+            if (shunt == "yes") {
+                significantROS += "Shunt, ";
+                reportText += "+Shunt: Yes\n";
+            }
+            else {
+                reportText += "-Shunt: No\n";
+            }
+
+            if (aneurysm == "yes") {
+                significantROS += "Aneurysm, ";
+                reportText += "+Aneurysm: Yes\n";
+            }
+            else {
+                reportText += "-Aneurysm: No\n";
+            }
+
+
+            reportText += "\n";
+            reportText += "\n";
+            reportText += "Information provided by: " + completedByRelationship + "\n";
+            reportText += "Information provided on: " + createdAt + "\n";
+
+            fullReportText += "SIGNIFICANT ROS: " + stringBeautify2(significantROS) + "." + "\n\n\n" + "REVIEW OF SYSTEMS \n" + reportText;
+
+            displayGrid += "<input type='button' id='btnCopy_" + primaryKey + "' onclick='copyToClipboard(\"" + primaryKey + "\")' value='SELECT ALL Chart Number: " + chartNumber + "'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+
+            displayGrid += "<input type='button' id='btnDelete_" + primaryKey + "' onclick='trashChart(\"" + primaryKey + "\")' value='DELETE Chart Number: " + chartNumber + "'/><BR><BR>";
+
+            displayGrid += "<textarea readonly id='ta_" + primaryKey + "'>" + fullReportText + "</textarea><br><br><br><br>";
+
+            $("#displayGrid").html(displayGrid);
+
+        });
+
+        function stringBeautify2(str) {
+            //str = str.replace(/,/g, ", ");
+            numberOfCommas = (str.split(",").length - 1);
+            //lert(numberOfCommas);
+            if (numberOfCommas > 1) {
+                var lastComma = str.lastIndexOf(',');
+                var newStr = str.substring(0, lastComma) + '' + str.substring(lastComma + 1);
+                lastComma = newStr.lastIndexOf(',');
+                newStr = newStr.substring(0, lastComma) + ' and' + newStr.substring(lastComma + 1);
+                newStr = newStr.replace(/\s+$/, '');// strip trailing space
+                return newStr;
+            }
+            else if (numberOfCommas == 1) {
+                var lastComma = str.lastIndexOf(',');
+                var newStr = str.substring(0, lastComma) + '' + str.substring(lastComma + 1);
+                lastComma = newStr.lastIndexOf(',');
+                newStr = newStr.substring(0, lastComma) + '' + newStr.substring(lastComma + 1);
+                newStr = newStr.replace(/\s+$/, '');// strip trailing space
+                return newStr;
+            }
+            else if (numberOfCommas == 0) {
+                return "NONE were indicated"
+            }
+        }
+
+        function stringBeautify(arr) {
+            var a = arr.length;
+            var str = arr.toString();
+            if (a == 0) {
+                return "NONE";
+            }
+            else if (a == 1) {
+                return arr
+            }
+            else if (a == 2) {
+                //arr = arr.toString;
+                str = str.replace(/,/g, " and ");
+                return str;
+            }
+            else {
+                str = str.replace(/,/g, ", ");
+                var lastComma = str.lastIndexOf(',');
+                var newStr = str.substring(0, lastComma) + ' and' + str.substring(lastComma + 1);
+                return newStr;
+            }
+        }
+
+        function trashChart(primaryKey) {
+            var updates = {};
+            updates[primaryKey + '/trashed/'] = true;
+            xxxRef.update(updates);
+            //removeElement(primaryKey);
+            //startUp();
+            location.reload(true);
+        }
+
+        function copyToClipboard(primaryKey) {
+            var textareaID = "ta_" + primaryKey;
+            var copyText = document.getElementById(textareaID);
+            copyText.select();
+            document.execCommand("Copy");
+        }
+
+            // Good sample.  Works, but don't need it.
+            // 
+    /*         function removeElement(primaryKey) {
+                var btnCopyID = "btnCopy_" + primaryKey;
+                var btnDeleteID = "btnDelete_" + primaryKey;
+                var taID = "ta_" + primaryKey;
+                $("#" + btnCopyID).remove();
+                $("#" + btnDeleteID).remove();
+                $("#" + taID).remove();
+            }
+     */
+
+    </script>
+</body>
+
+</html>

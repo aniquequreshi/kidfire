@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Review of Systems - Kids Neurology</title>
+    <style>
+        body {
+            background-color: lightsteelblue;
+        }
+
+        td {
+            height: 35px;
+            vertical-align: top;
+        }
+
+        h1,
+        h4 {
+            color: blue;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div style="margin:0 auto;width:75%;text-align:left">
+        <h1>Review of Systems</h1>
+        <form id="rosForm" autocomplete="off">
+
+            <h3>User ID (provided to you by Front Desk staff):
+                <input type="number" required name="chartNumber" id="chartNumber" />
+            </h3>
+
+            <h3>What is your relationship to the patient?</h3>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="mother" value="mother" />Mother</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="father" value="father" />Father</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="grandmother" value="grandmother" />Grandmother</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="grandfather" value="grandfather" />Grandfather</label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="aunt" value="aunt" />Aunt</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="uncle" value="uncle" />Uncle</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="social worker" value="social worker" />Social Worker</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="guardian" value="guardian" />Guardian</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="other" value="other" />Other</label>
+
+            <hr/>
+
+            <table>
+                <tr>
+                    <td>
+                        <h4>Constitutional</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Recurrent Fever</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="recurrentFever" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="recurrentFever" value="no"> no </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Weight Loss</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="weightLoss" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="weightLoss" value="no"> no </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Lethargy</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="lethary" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="lethary" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Hyperactive</td>
+                    <td>
+
+                        <label>
+                            <input type="radio" required name="hyperactive" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="hyperactive" value="no"> no </label>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Eyes</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Wears Glasses </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="wearsGlasses" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="wearsGlasses" value="no"> no </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Vision Checked more than 6 months ago </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="visionChecked" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="visionChecked" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Abnormal Eye Movements </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="abnormalEyeMovements" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="abnormalEyeMovements" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Blurred Vision </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="blurredVision" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="blurredVision" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Double Vision </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="doubleVision" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="doubleVision" value="no"> no </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h4>Ears, Nose, Mouth, Throat</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hearing Problems </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="hearingProblems" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="hearingProblems" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tonsil Problems </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="tonsilProblems" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="tonsilProblems" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adenoid Problems </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="adenoidProblems" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="adenoidProblems" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Stuffy Nose </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="stuffyNose" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="stuffyNose" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Breath by Mouth </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="breathingByMouth" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="breathingByMouth" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Snores</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="snoring" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="snoring" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ringing in Ears </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="ringingInEars" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="ringingInEars" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vertigo/Dizziness </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="vertigoDizziness" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="vertigoDizziness" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h4>Cardiovascular</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ASD </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="asd" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="asd" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>VSD </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="vsd" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="vsd" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Murmur</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="murmur" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="murmur" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h4>Gastrointestinal</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Vomiting</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="vomiting" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="vomiting" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Diarrhea </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="diarrhea" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="diarrhea" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Constipation </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="constipation" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="constipation" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Abdominal Pain </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="abdominalPain" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="abdominalPain" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Feeding Difficulty </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="feedingDifficulty" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="feedingDifficulty" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h4>Hematologic/Lymphatic</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Anemia </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="anemia" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="anemia" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sickel Cell </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="sickelCell" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="sickelCell" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h4>Psychiatric</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ADHD </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="adhd" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="adhd" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ODD </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="odd" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="odd" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Bipolar </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="bipolar" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="bipolar" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Schizophrenia </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="schizophrenia" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="schizophrenia" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Suicidal </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="suicidal" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="suicidal" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Illicit Drug Use </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="illicitDrugUse" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="illicitDrugUse" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Anxiety</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="anxiety" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="anxiety" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Depression</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="depression" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="depression" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hallucination</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="hallucination" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="hallucination" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Aggression</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="aggression" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="aggression" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h4>Endocrine</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Diabetes</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="diabetes" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="diabetes" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Hypothyroidism</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="hypothyroidism" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="hypothyroidism" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hyperthyroidism </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="hyperthyroidism" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="hyperthyroidism" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h4>Respiratory</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Asthma </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="asthma" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="asthma" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reactive Airway Disease </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="reactiveAirwayDisease" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="reactiveAirwayDisease" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Bronchitis </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="bronchitis" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="bronchitis" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Bronchiolitis</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="bronchiolitis" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="bronchiolitis" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h4>Genitourinary</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Urinary Incontinence</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="urinaryIncontinence" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="urinaryIncontinence" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Urinary Reflux </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="urinaryReflux" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="urinaryReflux" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Urinary Tract Infection </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="urinaryTractInfection" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="urinaryTractInfection" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h4>Musculoskeletal</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Difficulty in Walking </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="difficultyInWalking" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="difficultyInWalking" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Flat Foot </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="flatFoot" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="flatFoot" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Scoliosis </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="scoliosis" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="scoliosis" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fractures </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="fractures" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="fractures" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <h4>Integumentary/Skin</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Rash/Hives </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="rashHives" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="rashHives" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Birthmarks </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="birthmarks" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="birthmarks" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Bumps</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="bumps" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="bumps" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h4>Allergic/Immunologic</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Drug Allergies </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="drugAllergies" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="drugAllergies" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Seasonal Allergies </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="seasonal" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="seasonal" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Immune </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="immune" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="immune" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h4>Neurological</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Seizures</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="seizures" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="seizures" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Staring Episodes </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="staringEpisodes" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="staringEpisodes" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Confusion </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="confusion" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="confusion" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Developmental Delay</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="developmentalDelay" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="developmentalDelay" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Mental Retardation</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="mentalRetardation" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="mentalRetardation" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Cerebral Palsy</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="cerebralPalsy" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="cerebralPalsy" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Headaches</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="headache" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="headache" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Difficulty in Talking </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="difficultyInTalking" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="difficultyInTalking" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Difficulty in Swallowing </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="difficultyInSwallowing" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="difficultyInSwallowing" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tumor </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="tumor" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="tumor" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Brain Damage </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="brainDamage" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="brainDamage" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Shunt </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="shunt" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="shunt" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Aneurysm </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="aneurysm" value="yes"> yes
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="aneurysm" value="no"> no
+                        </label>
+                    </td>
+                </tr>
+
+            </table>
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <input type="Submit" value="Submit" />
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBImyqi96ixDENotso6AuW-XYKBZ8i6QzY",
+            authDomain: "kidsneur.firebaseapp.com",
+            databaseURL: "https://kidsneur.firebaseio.com",
+            projectId: "kidsneur",
+            storageBucket: "kidsneur.appspot.com",
+            messagingSenderId: "1025459044469"
+        };
+        firebase.initializeApp(config);
+
+        var rosRef = firebase.database().ref('ros');
+
+        document.getElementById("rosForm").addEventListener("submit", submitForm);
+
+        function submitForm(e) {
+            e.preventDefault();
+            saveData();
+            alert("Successfully Submitted");
+            
+            $('#rosForm')[0].reset();
+            window.location = "../";
+        }
+
+        function getInputValue(name) {
+            return $('input[name="' + name + '"]').val()
+        }
+
+        function getRadioButtonValue(name) {
+            return $("input[name='" + name + "']:checked").val();
+        }
+
+        function getDropDownValue(name) {
+            return $('select[name="' + name + '"]').val();
+        }
+
+
+        function saveData() {
+            var newRef = rosRef.push();
+
+            var chartNumber = getInputValue("chartNumber");
+            var completedByRelationship = getRadioButtonValue("completedByRelationship");
+            var recurrentFever = getRadioButtonValue("recurrentFever");
+            var weightLoss = getRadioButtonValue("weightLoss");
+            var lethary = getRadioButtonValue("lethary");
+            var hyperactive = getRadioButtonValue("hyperactive");
+            var wearsGlasses = getRadioButtonValue("wearsGlasses");
+            var visionChecked = getRadioButtonValue("visionChecked");
+            var abnormalEyeMovements = getRadioButtonValue("abnormalEyeMovements");
+            var blurredVision = getRadioButtonValue("blurredVision");
+            var doubleVision = getRadioButtonValue("doubleVision");
+            var hearingProblems = getRadioButtonValue("hearingProblems");
+            var tonsilProblems = getRadioButtonValue("tonsilProblems");
+            var adenoidProblems = getRadioButtonValue("adenoidProblems");
+            var stuffyNose = getRadioButtonValue("stuffyNose");
+            var breathingByMouth = getRadioButtonValue("breathingByMouth");
+            var snoring = getRadioButtonValue("snoring");
+            var ringingInEars = getRadioButtonValue("ringingInEars");
+            var vertigoDizziness = getRadioButtonValue("vertigoDizziness");
+            var asd = getRadioButtonValue("asd");
+            var vsd = getRadioButtonValue("vsd");
+            var murmur = getRadioButtonValue("murmur");
+            var vomiting = getRadioButtonValue("vomiting");
+            var diarrhea = getRadioButtonValue("diarrhea");
+            var constipation = getRadioButtonValue("constipation");
+            var abdominalPain = getRadioButtonValue("abdominalPain");
+            var feedingDifficulty = getRadioButtonValue("feedingDifficulty");
+            var anemia = getRadioButtonValue("anemia");
+            var sickelCell = getRadioButtonValue("sickelCell");
+            var adhd = getRadioButtonValue("adhd");
+            var odd = getRadioButtonValue("odd");
+            var bipolar = getRadioButtonValue("bipolar");
+            var schizophrenia = getRadioButtonValue("schizophrenia");
+            var suicidal = getRadioButtonValue("suicidal");
+            var illicitDrugUse = getRadioButtonValue("illicitDrugUse");
+            var anxiety = getRadioButtonValue("anxiety");
+            var depression = getRadioButtonValue("depression");
+            var hallucination = getRadioButtonValue("hallucination");
+            var aggression = getRadioButtonValue("aggression");
+            var diabetes = getRadioButtonValue("diabetes");
+            var hypothyroidism = getRadioButtonValue("hypothyroidism");
+            var hyperthyroidism = getRadioButtonValue("hyperthyroidism");
+            var asthma = getRadioButtonValue("asthma");
+            var reactiveAirwayDisease = getRadioButtonValue("reactiveAirwayDisease");
+            var bronchitis = getRadioButtonValue("bronchitis");
+            var bronchiolitis = getRadioButtonValue("bronchiolitis");
+            var urinaryIncontinence = getRadioButtonValue("urinaryIncontinence");
+            var urinaryReflux = getRadioButtonValue("urinaryReflux");
+            var urinaryTractInfection = getRadioButtonValue("urinaryTractInfection");
+            var difficultyInWalking = getRadioButtonValue("difficultyInWalking");
+            var flatFoot = getRadioButtonValue("flatFoot");
+            var scoliosis = getRadioButtonValue("scoliosis");
+            var fractures = getRadioButtonValue("fractures");
+            var rashHives = getRadioButtonValue("rashHives");
+            var birthmarks = getRadioButtonValue("birthmarks");
+            var bumps = getRadioButtonValue("bumps");
+            var drugAllergies = getRadioButtonValue("drugAllergies");
+            var seasonal = getRadioButtonValue("seasonal");
+            var immune = getRadioButtonValue("immune");
+            var seizures = getRadioButtonValue("seizures");
+            var staringEpisodes = getRadioButtonValue("staringEpisodes");
+            var confusion = getRadioButtonValue("confusion");
+            var developmentalDelay = getRadioButtonValue("developmentalDelay");
+            var mentalRetardation = getRadioButtonValue("mentalRetardation");
+            var cerebralPalsy = getRadioButtonValue("cerebralPalsy");
+            var headache = getRadioButtonValue("headache");
+            var difficultyInTalking = getRadioButtonValue("difficultyInTalking");
+            var difficultyInSwallowing = getRadioButtonValue("difficultyInSwallowing");
+            var tumor = getRadioButtonValue("tumor");
+            var brainDamage = getRadioButtonValue("brainDamage");
+            var shunt = getRadioButtonValue("shunt");
+            var aneurysm = getRadioButtonValue("aneurysm");
+
+
+            newRef.set({
+                chartNumber: chartNumber,
+                completedByRelationship: completedByRelationship,
+                recurrentFever: recurrentFever,
+                weightLoss: weightLoss,
+                lethary: lethary,
+                hyperactive: hyperactive,
+                wearsGlasses: wearsGlasses,
+                visionChecked: visionChecked,
+                abnormalEyeMovements: abnormalEyeMovements,
+                blurredVision: blurredVision,
+                doubleVision: doubleVision,
+                hearingProblems: hearingProblems,
+                tonsilProblems: tonsilProblems,
+                adenoidProblems: adenoidProblems,
+                stuffyNose: stuffyNose,
+                breathingByMouth: breathingByMouth,
+                snoring: snoring,
+                ringingInEars: ringingInEars,
+                vertigoDizziness: vertigoDizziness,
+                asd: asd,
+                vsd: vsd,
+                murmur: murmur,
+                vomiting: vomiting,
+                diarrhea: diarrhea,
+                constipation: constipation,
+                abdominalPain: abdominalPain,
+                feedingDifficulty: feedingDifficulty,
+                anemia: anemia,
+                sickelCell: sickelCell,
+                adhd: adhd,
+                odd: odd,
+                bipolar: bipolar,
+                schizophrenia: schizophrenia,
+                suicidal: suicidal,
+                illicitDrugUse: illicitDrugUse,
+                anxiety: anxiety,
+                depression: depression,
+                hallucination: hallucination,
+                aggression: aggression,
+                diabetes: diabetes,
+                hypothyroidism: hypothyroidism,
+                hyperthyroidism: hyperthyroidism,
+                asthma: asthma,
+                reactiveAirwayDisease: reactiveAirwayDisease,
+                bronchitis: bronchitis,
+                bronchiolitis: bronchiolitis,
+                urinaryIncontinence: urinaryIncontinence,
+                urinaryReflux: urinaryReflux,
+                urinaryTractInfection: urinaryTractInfection,
+                difficultyInWalking: difficultyInWalking,
+                flatFoot: flatFoot,
+                scoliosis: scoliosis,
+                fractures: fractures,
+                rashHives: rashHives,
+                birthmarks: birthmarks,
+                bumps: bumps,
+                drugAllergies: drugAllergies,
+                seasonal: seasonal,
+                immune: immune,
+                seizures: seizures,
+                staringEpisodes: staringEpisodes,
+                confusion: confusion,
+                developmentalDelay: developmentalDelay,
+                mentalRetardation: mentalRetardation,
+                cerebralPalsy: cerebralPalsy,
+                headache: headache,
+                difficultyInTalking: difficultyInTalking,
+                difficultyInSwallowing: difficultyInSwallowing,
+                tumor: tumor,
+                brainDamage: brainDamage,
+                shunt: shunt,
+                aneurysm: aneurysm,
+                trashed: false,
+                createdAt: Date.now()
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>

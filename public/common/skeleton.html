@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> - Kids Neurology</title>
+    <style>
+        body {
+            background-color: lightsteelblue;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div style="margin:0 auto;width:75%;text-align:left">
+        <h1>xxx</h1>
+        <form id="xxxForm" autocomplete="off">
+
+            <h4>User ID (provided to you by Front Desk staff):
+                <input type="number" required name="chartNumber" id="chartNumber" />
+            </h4>
+
+            <h4>Date of Birth:
+                <input type="date" required name="dob" id="dob" />
+            </h4>
+
+            <h4>What is your relationship to the patient?</h4>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="mother" value="mother" />Mother</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="father" value="father" />Father</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="grandmother" value="grandmother" />Grandmother</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="grandfather" value="grandfather" />Grandfather</label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="aunt" value="aunt" />Aunt</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="uncle" value="uncle" />Uncle</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="social worker" value="social worker" />Social Worker</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="guardian" value="guardian" />Guardian</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="other" value="other" />Other</label>
+
+            <hr/>
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <input type="Submit" value="Submit" />
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBImyqi96ixDENotso6AuW-XYKBZ8i6QzY",
+            authDomain: "kidsneur.firebaseapp.com",
+            databaseURL: "https://kidsneur.firebaseio.com",
+            projectId: "kidsneur",
+            storageBucket: "kidsneur.appspot.com",
+            messagingSenderId: "1025459044469"
+        };
+        firebase.initializeApp(config);
+
+        var xxxRef = firebase.database().ref('xxx');
+
+        document.getElementById("xxxForm").addEventListener("submit", submitForm);
+
+        function submitForm(e) {
+            e.preventDefault();
+
+            var chartNumber = getInputValues("chartNumber");
+            var dob = getInputValues("dob");;
+            var gender = $('input[name="gender"]:checked').val();
+            var completedByRelationship = $('input[name="completedByRelationship"]:checked').val();
+
+
+            saveData(chartNumber, dob, gender, completedByRelationship);
+
+            alert("Successfully Submitted");
+            $('#xxxForm')[0].reset();
+        }
+
+        function getInputValues(id) {
+            return document.getElementById(id).value;
+        }
+
+
+        function saveData(chartNumber, dob, gender, completedByRelationship) {
+            var newRef = xxxRef.push();
+            newRef.set({
+                chartNumber: chartNumber,
+                dob: dob,
+                gender: gender,
+                completedByRelationship: completedByRelationship,
+                trashed: false,
+                createdAt: Date.now()
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>

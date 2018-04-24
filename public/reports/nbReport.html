@@ -1,0 +1,218 @@
+<html>
+    
+    <head>
+        <title>Neurobehavior Report - Kids Neurology</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style type="text/css">
+            textarea {
+                width: 800px;
+                height: 350px;
+                background-color: lightyellow;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    
+    <body>
+        
+        <a href="/reports">Home</a>
+    
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button onClick='logout()'>Logout</button>
+        <br>
+        
+        <h1>Neurobehavior Report</h1>
+    
+        <br>
+        <div id="displayGrid">
+    
+        </div>
+    
+    
+    
+        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyBImyqi96ixDENotso6AuW-XYKBZ8i6QzY",
+                authDomain: "kidsneur.firebaseapp.com",
+                databaseURL: "https://kidsneur.firebaseio.com",
+                projectId: "kidsneur",
+                storageBucket: "kidsneur.appspot.com",
+                messagingSenderId: "1025459044469"
+            };
+            firebase.initializeApp(config);
+    
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    // User is signed in.
+                    startUp();
+                } else {
+                    // No user is signed in.
+                    window.location = "../login.html";
+                }
+            });
+    
+            var xxxRef = firebase.database().ref('neurobehavior');
+    
+    
+            $(document).ready(startUp);
+            //window.onload = startUp;
+    
+    
+            //document.getElementById("get-follow-up-medical-history-form").addEventListener("submit", submitForm);
+            function logout() {
+                //alert("logging out");
+                firebase.auth().signOut();
+            }
+    
+            function startUp() {
+                readDataContinuously();
+            }
+    
+            // NOT USED, BUT IS GOOD FOR READ ONCE
+            // Do NOT delete
+            /* function readDataOnce() {
+    
+                //document.getElementById("reportText").value = "";
+                //var displayGrid = "";
+                var userDataRef = followUpMedHxRef.orderByChild('trashed').equalTo(false).limitToLast(100);
+                userDataRef.once("value").then(function (snapshot) {
+                    snapshot.forEach(function (childSnapshot) {
+                        //console.log(snapshot.val());
+                        var key = childSnapshot.key;
+                        var childData = childSnapshot.val();
+    
+                        var chiefComplaint_val = childSnapshot.val().chiefComplaint;
+                        var gender_val = childSnapshot.val().gender;
+                        var chartNumber_val = childSnapshot.val().chartNumber;
+                        var key_val = childSnapshot.key;
+                        var trashed_val = childSnapshot.val().trashed;
+    
+    
+                        displayGrid += "<input type='button' onclick='copyToClipboard(\"" + key_val + "\")' value='SELECT ALL Chart Number: " + chartNumber_val + "'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+    
+                        displayGrid += "<input type='button' onclick='trashChart(\"" + key_val + "\")' value='DELETE Chart Number: " + chartNumber_val + "'/><BR><BR>";
+                        
+                        displayGrid += "<textarea id='ta_" + key_val + "'>" + reportText + "</textarea>";
+                        
+                        var reportText = "";
+                        reportText += "Chart Number: " + chartNumber_val + "\n\n";
+                        reportText += "Chief Complaint: " + chiefComplaint_val + "\n\n";
+                        //document.getElementById("reportText").value = reportText;
+    
+                        
+    
+                        //document.getElementById("displayGrid").innerHTML = displayGrid;
+                        //displayGrid += "<input type='button' onclick='patientSelected(\"" + key_val + "\")' value='" + chartNumber_val + "'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+                        //displayGrid += "<label>" + chartNumber_val + "</label>&nbsp;&nbsp;&nbsp;&nbsp;";
+    
+                    });
+                    //WORKS: To append to display grid
+                    $("#displayGrid").append(displayGrid);
+                    //readDataContinuously();
+                });
+    
+            }
+     */
+            function readDataContinuously() { }
+            var displayGrid = "";
+            //document.getElementById("reportText").value = "";
+            //will retrieve data of newly added child along with previous child's key
+            var userDataRef = xxxRef.orderByChild('trashed').equalTo(false);
+            userDataRef.on("child_added", function (data) {
+                var childData = data.val();
+                var primaryKey = data.key;
+                var chartNumber = childData.chartNumber;
+                var completedByRelationship = childData.completedByRelationship;
+                var trashed = childData.trashed;
+                var createdAt = new Date(childData.createdAt);
+                var referral = childData.referral;
+                var concernedAbout = childData.concernedAbout;
+                var behavior = childData.behavior;
+                var autism = childData.autism;
+                var learning = childData.learning;
+                var seizures = childData.seizures;
+                var sleep = childData.sleep;
+                var vision = childData.vision;
+                var hearing = childData.hearing;
+                var tics = childData.tics;
+                var historyOf = childData.historyOf;
+                var specialists = childData.specialists;
+                var adhd = childData.adhd;
+
+                var reportText = "";
+                reportText += "Chart Number: " + chartNumber + "\n";
+                
+                reportText += referral + "\n";
+                reportText += concernedAbout + "\n";
+                reportText += behavior + "\n";
+                reportText += autism + "\n";
+                reportText += learning + "\n";
+                reportText += seizures + "\n";
+                reportText += sleep + "\n";
+                reportText += vision + "\n";
+                reportText += hearing + "\n";
+                reportText += tics + "\n";
+                reportText += adhd + "\n";
+                reportText += historyOf + "\n";
+                reportText += specialists + "\n";
+                reportText += "\n";
+                reportText += "Information provided by: " + completedByRelationship + "\n";
+                reportText += "Information provided on: " + createdAt + "\n";
+    
+    
+                displayGrid += "<input type='button' id='btnCopy_" + primaryKey + "' onclick='copyToClipboard(\"" + primaryKey + "\")' value='SELECT ALL Chart Number: " + chartNumber + "'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+    
+                displayGrid += "<input type='button' id='btnDelete_" + primaryKey + "' onclick='trashChart(\"" + primaryKey + "\")' value='DELETE Chart Number: " + chartNumber + "'/><BR><BR>";
+    
+                displayGrid += "<textarea readonly id='ta_" + primaryKey + "'>" + reportText + "</textarea><br><br><br><br>";
+    
+    
+                //document.getElementById("reportText").value = reportText;
+    
+    
+    
+                //document.getElementById("displayGrid").innerHTML = displayGrid;
+    
+                $("#displayGrid").html(displayGrid);
+    
+            });
+    
+    
+            function trashChart(primaryKey) {
+                var updates = {};
+                updates[primaryKey + '/trashed/'] = true;
+                xxxRef.update(updates);
+                //removeElement(primaryKey);
+                //startUp();
+                location.reload(true);
+            }
+    
+            function copyToClipboard(primaryKey) {
+                var textareaID = "ta_" + primaryKey;
+                var copyText = document.getElementById(textareaID);
+                copyText.select();
+                document.execCommand("Copy");
+            }
+    
+            // Good sample.  Works, but don't need it.
+            // 
+    /*         function removeElement(primaryKey) {
+                var btnCopyID = "btnCopy_" + primaryKey;
+                var btnDeleteID = "btnDelete_" + primaryKey;
+                var taID = "ta_" + primaryKey;
+                $("#" + btnCopyID).remove();
+                $("#" + btnDeleteID).remove();
+                $("#" + taID).remove();
+            }
+     */
+            // For user authentication
+    
+    
+            // Log the user in with an email combination
+    
+        </script>
+    </body>
+    
+    </html>

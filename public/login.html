@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <title>Login - Kids Neurology</title>
+
+</head>
+
+<body>
+        <br>
+        <a href="/reports">ReportsHome</a>
+        <br/><br/>
+    <form id="loginForm">
+        <br/>
+        <table>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="email" required id="email"  />
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" required id="password" />
+                </td>
+
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <button type="submit" value="Submit">Submit</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBImyqi96ixDENotso6AuW-XYKBZ8i6QzY",
+            authDomain: "kidsneur.firebaseapp.com",
+            databaseURL: "https://kidsneur.firebaseio.com",
+            projectId: "kidsneur",
+            storageBucket: "kidsneur.appspot.com",
+            messagingSenderId: "1025459044469"
+        };
+
+        firebase.initializeApp(config);
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in.
+                //auth = user;
+                window.location = "/reports";
+            } else {
+                // No user is signed in.
+            }
+        });
+
+        document.getElementById("loginForm").addEventListener("submit", submitForm);
+
+        function submitForm(e) {
+            e.preventDefault();
+            signIn();
+        }
+
+        function signIn() {
+            //alert("About to login");
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            if (email.length < 4) {
+                alert('Please enter an email address.');
+                return;
+            }
+            if (password.length < 4) {
+                alert('Please enter a password.');
+                return;
+            }
+
+            // [START authwithemail]
+
+            firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // [START_EXCLUDE]
+                if (errorCode === 'auth/wrong-password') {
+                    alert('Authorization Failure: Wrong Email or Password');
+                } else {
+                    alert(errorMessage);
+                }
+                console.log(error);
+                //document.getElementById('quickstart-sign-in').disabled = false;
+                // [END_EXCLUDE]
+            });
+            // [END authwithemail]
+        }
+
+    </script>
+</body>
+
+</html>

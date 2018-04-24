@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Follow Up Medical History - Kids Neurology</title>
+  <style>
+    body {
+      background-color: lightsteelblue;
+    }
+  </style>
+
+</head>
+
+<body>
+  <a href="/">Home</a>
+  <br/>
+  <div style="margin:0 auto;width:75%;text-align:left">
+    <h1>Follow Up Medical History</h1>
+    <form id="fmhForm" autocomplete="off">
+
+      <h4>User ID (provided to you by Front Desk staff):
+        <input type="number" required name="chartNumber" id="chartNumber" />
+      </h4>
+
+      <h4>What is the primary medical reason for Today's Visit?</h4>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	ADHD"> ADHD </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Autism"> Autism </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Behavioral/School Problems"> Behavioral/School Problems </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Cerebral Palsy"> Cerebral Palsy </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Dizziness"> Dizziness </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Epilepsy/Seizures"> Epilepsy/Seizures </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Guillain-Barre Syndrome"> Guillain-Barre Syndrome </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Headaches/Migraines"> Headaches/Migraines </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Learning Disabilities"> Learning Disabilities </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Myasthenia Gravis"> Myasthenia Gravis </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Myopathies"> Myopathies </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Neuro-Developmental Disorders"> Neuro-Developmental Disorders </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Neurofibromatosis"> Neurofibromatosis </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Neuro-Metabolic Disorders"> Neuro-Metabolic Disorders </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Neuro-Oncology/Tumors"> Neuro-Oncology/Tumors </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Neuropathy"> Neuropathy </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Spina Bifida"> Spina Bifida </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Spinal Cord Injuries"> Spinal Cord Injuries </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Tics/Tourette's"> Tics/Tourette's </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Tremors"> Tremors </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Tuberous Sclerosis"> Tuberous Sclerosis </label>
+
+      <br/>
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Vertigo"> Vertigo </label>
+      <br/>
+
+      <label>
+        <input type="radio" required name="chiefComplaint" value="	Other"> Other </label>
+      <br/>
+
+
+
+      <h4>Since your last visit, has there been a change in the patient's:</h4>
+      <table>
+        <tbody>
+          <td>Cardiac Condition</td>
+          <td>
+            <input type="radio" required name="cardiac" id="cardiacChanged" value="yes" />Yes
+            <input type="radio" required name="cardiac" id="cardiacNotChanged" value="no" />No
+          </td>
+          </tr>
+          <td>Respiratory Condition</td>
+          <td>
+            <input type="radio" required name="respiratory" id="respiratoryChanged" value="yes" />Yes
+            <input type="radio" required name="respiratory" id="respiratoryNotChanged" value="no" />No
+          </td>
+          </tr>
+          <td>Psychiatric Condition</td>
+          <td>
+            <input type="radio" required name="psychiatric" id="psychiatricChanged" value="yes" />Yes
+            <input type="radio" required name="psychiatric" id="psychiatricNotChanged" value="no" />No
+          </td>
+          </tr>
+          <td>Other Conditions</td>
+          <td>
+            <input type="radio" required name="otherConditions" id="otherConditionsChanged" value="yes" />Yes
+            <input type="radio" required name="otherConditions" id="otherConditionsNotChanged" value="no" />No
+          </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Since your last visit, has the patient been Hospitalized or has had Surgeries?</h4>
+      <input type="radio" required name="hospitalized" id="hospitalizedYes" value="yes" />Yes
+      <input type="radio" required name="hospitalized" id="hospitalizedNo" value="no" />No
+
+      <h4>Is the patient Allergic to any drug?</h4>
+      <input type="radio" required name="drugAllergy" id="drugAllergyYes" value="yes" />Yes
+      <input type="radio" required name="drugAllergy" id="drugAllergyNo" value="no" />No
+
+      <h4>Immunization Status:</h4>
+      <label>
+        <input type="radio" required name="immunization" id="immunizationCurrent" value="Current" />Current</label>
+      <label>
+        <input type="radio" required name="immunization" id="immunizationOff" value="Off-Schedule" />Off-Schedule</label>
+      <label>
+        <input type="radio" required name="immunization" id="immunizationContraindicated" value="Medically Contraindicated" />Medically Contraindicated</label>
+      <label>
+        <input type="radio" required name="immunization" id="immunizationRefusal" value="Parental Refusal" />Parental Refusal</label>
+
+
+      <h4>Are you concerned about the patient's Academic Performance?</h4>
+      <input type="radio" required name="academics" id="academicConcerned" value="yes" />Yes
+      <input type="radio" required name="academics" id="academicNotConcerned" value="no" />No
+      <label><input type="radio" required name="academics" id="academicNotApplicable" value="na" />Not Applicable</label>
+
+      <h4>What is the patient's Grade Level?</h4>
+      <label>
+        <input type="radio" required name="gradeLevel" value="Not in school - (Infant/toddler/preschool age)"> Not in school - (Infant/toddler/preschool age) </label>
+      <br/>
+      <label>
+        <input type="radio" required name="gradeLevel" value="Not in school - (medical reasons)"> Not in school - (medical reasons) </label>
+      <br/>
+      <label>
+        <input type="radio" required name="gradeLevel" value="Kindergarten"> Kindergarten </label>
+      <br/>
+      <label>
+        <input type="radio" required name="gradeLevel" value="First"> First </label>
+      <br/>
+      <label>
+        <input type="radio" required name="gradeLevel" value="Second"> Second </label>
+      <br/>
+      <label>
+        <input type="radio" required name="gradeLevel" value="Third"> Third </label>
+      <br/>
+      <label>
+        <input type="radio" required name="gradeLevel" value="Fourth"> Fourth </label>
+      <br/>
+      <label>
+        <input type="radio" required name="gradeLevel" value="Fifth"> Fifth </label>
+      <br/>
+      <label>
+        <input type="radio" required name="gradeLevel" value="Sixth"> Sixth </label>
+      <br/>
+      <label>
+        <input type="radio" required name="gradeLevel" value="Seventh"> Seventh </label>
+      <br/>
+      <label>
+        <input type="radio" required name="gradeLevel" value="Eighth"> Eighth </label>
+      <br/>
+      <label>
+        <input type="radio" required name="gradeLevel" value="Ninth"> Ninth </label>
+      <br/>
+      <label>
+        <input type="radio" required name="gradeLevel" value="Tenth"> Tenth </label>
+      <br/>
+      <label>
+        <input type="radio" required name="gradeLevel" value="Eleventh"> Eleventh </label>
+      <br/>
+      <label>
+        <input type="radio" required name="gradeLevel" value="Twelfth"> Twelfth </label>
+      <br/>
+
+      <h4>Are you concerned about the patient's Social Interaction?</h4>
+      <input type="radio" required name="social" id="socialConcerned" value="yes" />Yes
+      <input type="radio" required name="social" id="socialNotConcerned" value="no" />No
+
+      <h4>Patient lives with:</h4>
+      <label>
+        <input type="radio" required name="livesWith" id="bothParents" value="both  parents" />Both Parents</label>
+      <label>
+        <input type="radio" required name="livesWith" id="motherOnly" value="mother only" />Mother Only</label>
+      <label>
+        <input type="radio" required name="livesWith" id="fatherOnly" value="father only" />Father Only</label>
+      <label>
+        <input type="radio" required name="livesWith" id="guardian" value="guardian" />Guardian</label>
+
+      <h4>What is your relationship to the patient?</h4>
+      <label>
+        <input type="radio" required name="completedByRelationship" id="mother" value="mother" />Mother</label>
+      <label>
+        <input type="radio" required name="completedByRelationship" id="father" value="father" />Father</label>
+      <label>
+        <input type="radio" required name="completedByRelationship" id="grandmother" value="grandmother" />Grandmother</label>
+      <label>
+        <input type="radio" required name="completedByRelationship" id="grandfather" value="grandfather" />Grandfather</label>
+      <br/>
+      <br/>
+      <label>
+        <input type="radio" required name="completedByRelationship" id="aunt" value="aunt" />Aunt</label>
+      <label>
+        <input type="radio" required name="completedByRelationship" id="uncle" value="uncle" />Uncle</label>
+      <label>
+        <input type="radio" required name="completedByRelationship" id="social worker" value="social worker" />Social Worker</label>
+      <label>
+        <input type="radio" required name="completedByRelationship" id="guardian" value="guardian" />Guardian</label>
+      <label>
+        <input type="radio" required name="completedByRelationship" id="other" value="other" />Other</label>
+
+
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <input type="Submit" value="Submit" />
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+
+    </form>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBImyqi96ixDENotso6AuW-XYKBZ8i6QzY",
+      authDomain: "kidsneur.firebaseapp.com",
+      databaseURL: "https://kidsneur.firebaseio.com",
+      projectId: "kidsneur",
+      storageBucket: "kidsneur.appspot.com",
+      messagingSenderId: "1025459044469"
+    };
+    firebase.initializeApp(config);
+
+    var followUpMedHxRef = firebase.database().ref('followUpMedHx');
+
+
+    document.getElementById("fmhForm").addEventListener("submit", submitForm);
+
+    function submitForm(e) {
+      e.preventDefault();
+
+      var chartNumber = getInputValues("chartNumber");
+      var chiefComplaint = $('input[name="chiefComplaint"]:checked').val();
+      // for dropdown: var chiefComplaint = $('#chiefComplaint').val();d
+      var cardiac = $('input[name="cardiac"]:checked').val();
+      var respiratory = $('input[name="respiratory"]:checked').val();
+      var psychiatric = $('input[name="respiratory"]:checked').val();
+      var otherConditions = $('input[name="otherConditions"]:checked').val();
+      var hospitalized = $('input[name="hospitalized"]:checked').val();
+      var drugAllergy = $('input[name="drugAllergy"]:checked').val();
+      var immunization = $('input[name="immunization"]:checked').val();
+      var academics = $('input[name="academics"]:checked').val();
+      var gradeLevel = $('input[name="gradeLevel"]:checked').val();
+      //for dropdown:  var gradeLevel = $('#gradeLevel').val();
+      var social = $('input[name="social"]:checked').val();
+      var livesWith = $('input[name="livesWith"]:checked').val();
+      var completedByRelationship = $('input[name="completedByRelationship"]:checked').val();
+
+      saveData(chartNumber, chiefComplaint, cardiac, respiratory, psychiatric, otherConditions, hospitalized, drugAllergy, immunization, academics, gradeLevel, social, livesWith, completedByRelationship);
+      //console.log(chiefComplaint);
+      alert("Successfully Submitted");
+      $('#fmhForm')[0].reset();
+      window.location = "../";
+    }
+
+    function getInputValues(id) {
+      return document.getElementById(id).value;
+    }
+
+
+    function saveData(chartNumber, chiefComplaint, cardiac, respiratory, psychiatric, otherConditions, hospitalized, drugAllergy, immunization, academics, gradeLevel, social, livesWith, completedByRelationship) {
+      var newFollowUpMedHxRef = followUpMedHxRef.push();
+      newFollowUpMedHxRef.set({
+        chartNumber: chartNumber,
+        chiefComplaint: chiefComplaint,
+        cardiac: cardiac,
+        respiratory: respiratory,
+        psychiatric: psychiatric,
+        otherConditions: otherConditions,
+        hospitalized: hospitalized,
+        drugAllergy: drugAllergy,
+        immunization: immunization,
+        academics: academics,
+        gradeLevel: gradeLevel,
+        social: social,
+        livesWith: livesWith,
+        completedByRelationship: completedByRelationship,
+        trashed: false,
+        createdAt: Date.now()
+      });
+    }
+  </script>
+</body>
+
+</html>

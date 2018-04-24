@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Neurobehavior Form - Kids Neurology</title>
+    <style>
+        body {
+            background-color: lightsteelblue;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <a href="/">Home</a>
+    <br/>
+    <div style="margin:0 auto;width:75%;text-align:left">
+        <h1>Neuro Behavior Questionnaire</h1>
+        <form id="xxxForm" autocomplete="off" >
+
+            <h4>User ID (provided to you by Front Desk staff):
+                <input type="number" required name="chartNumber" id="chartNumber" />
+            </h4>
+     
+            <h4>What is your relationship to the patient?</h4>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="mother" value="mother" />Mother</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="father" value="father" />Father</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="grandmother" value="grandmother" />Grandmother</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="grandfather" value="grandfather" />Grandfather</label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="aunt" value="aunt" />Aunt</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="uncle" value="uncle" />Uncle</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="social worker" value="social worker" />Social Worker</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="guardian" value="guardian" />Guardian</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="other" value="other" />Other</label>
+
+            <hr/>
+            <h3>Referral</h3>
+
+            <h4>Was patient referred to Kids Neurology by the pediatrician for evaluation?
+                <label>
+                    <input type="radio" required name="referredPediatrician" value="true" />Yes
+                </label>
+                <label>
+                    <input type="radio" required name="referredPediatrician" value="false" />No
+                </label>
+            </h4>
+
+            <h4>Has patient previously been seen by a Psychiatrist or Neurologist?
+                <label>
+                    <input type="radio" required name="previouslySeen" value="true" />Yes
+                </label>
+                <label>
+                    <input type="radio" required name="previouslySeen" value="false" />No
+                </label>
+            </h4>
+
+            <h4>Was patient referred to Kids Neurology from a Psychiatric facility, and will continue treatment and medication
+                there?
+                <label>
+                    <input type="radio" required name="psychiatricFacility" value="true" />Yes</label>
+                <label>
+                    <input type="radio" required name="psychiatricFacility" value="false" />No</label>
+            </h4>
+            <hr/>
+            <h2>Concerns</h2>
+            <h3>What condition(s) are you concerned about in the patient?</h3>
+            <label>
+                <input type="checkbox" class="concernedAbout" value="Aggressive Behavior"> Aggressive Behavior</label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="concernedAbout" value="Anxiety"> Anxiety</label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="concernedAbout" value="Asperger"> Asperger</label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="concernedAbout" value="Attention Deficit Hyperactivity Disorder (ADHD)"> Attention Deficit Hyperactivity Disorder (ADHD)</label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="concernedAbout" value="Autism"> Autism</label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="concernedAbout" value="Depression"> Depression</label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="concernedAbout" value="Learning Disability"> Learning Disability</label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="concernedAbout" value="Obsessive Compulsive Disorder (OCD)"> Obsessive Compulsive Disorder (OCD)</label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="concernedAbout" value="Pervasive Development Disorder (PDD)"> Pervasive Development Disorder (PDD)</label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="concernedAbout" value="Speech Delay"> Speech Delay</label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="concernedAbout" value="Tics"> Tics</label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="concernedAbout" value="Other"> Other</label>
+            <br/>
+            <br/>
+
+            <hr/>
+            <h2>Have you observed the following behavior in the patient?</h2>
+            <h3>Defiance, Aggression, Mood Disorder or Psychosis</h3>
+            <input type="checkbox" class="behavior" id="temper" value="Temper tantrum or excessive loss of temper.">
+            <label for="temper">Temper tantrum or excessive loss of temper.</label>
+            <br>
+            <br>
+            <input type="checkbox" class="behavior" id="defies" value="Actively defies or refuses to comply with rules or an an adult's request.">
+            <label for="defies">Actively defies or refuses to comply with rules or an an adult's request.</label>
+            <br>
+            <br>
+            <input type="checkbox" class="behavior" id="mistakes" value="Blames others for his/her mistakes or misbehavior.">
+            <label for="mistakes">Blames others for his/her mistakes or misbehavior.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Is angry or resentful."> Is angry or resentful.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Argues with adults."> Argues with adults.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Deliberately annoys people."> Deliberately annoys people.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Is touchy or is easily annoyed."> Is touchy or is easily annoyed.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Excessively worries about a variety of events and situations."> Excessively worries about a variety of events and situations.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Struggles to cope with situations due to anxiety."> Struggles to cope with situations due to anxiety.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Has panic attacks."> Has panic attacks.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Is excessively nervous."> Is excessively nervous.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Is often sad."> Is often sad.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Makes frequent vague complaints about physical conditions (such as headache, stomach ache, or body aches)."> Makes frequent vague complaints about physical conditions (such as headache, stomach ache, or body aches).</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Shows very little expression."> Shows very little expression.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Lacks interest in daily activities."> Lacks interest in daily activities.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Has frequent, unexplained, fluctuations in mood."> Frequent, unexplained, fluctuations in mood.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Has auditory or visual hallucinations."> Has auditory or visual hallucinations.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Talks about, or had made effort, to run away from home."> Talks about, or had made effort, to run away from home.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Thinks about, or has attempted, suicide."> Thinks about, or has attempted, suicide.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Has made a purposeful attempt at harming others or him/her self."> Has made a purposeful attempt at harming others or him/her self.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="behavior" value="Displays aggressive behavior at home or in school."> Displays aggressive behavior at home or in school.</label>
+            <br/>
+            <br/>
+            <hr/>
+            <h3>Autism</h3>
+            <label>
+                <input type="checkbox" class="autism" value="Has difficulty making or maintaining eye contact for more than a few seconds in normal interaction."> Has difficulty making or maintaining eye contact for more than a few seconds in normal interaction.</label>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" class="autism" value="Displays limited facial expressions."> Displays limited facial expressions. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Has a closed body posture."> Has a closed body posture. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Has limited gestures."> Has limited gestures. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Does not make friends like other children in the same age group."> Does not make friends like other children in the same age group. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Does not show, point, or bring objects to share enjoyment."> Does not show, point, or bring objects to share enjoyment. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Lacks social and emotional give and take and does not respond to social or emotional cues."> Lacks social and emotional give and take and does not respond to social or emotional cues. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Did not say words till age 2 years."> Did not say words till age 2 years. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Did not communicate till age 3 in sentences."> Did not communicate till age 3 in sentences. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Does not use gestures to communicate."> Does not use gestures to communicate. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Can talk but does not hold their side of the conversation or start a conversation."> Can talk but does not hold their side of the conversation or start a conversation. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Has repetitive language."> Has repetitive language. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Does not engage in imaginative play."> Does not engage in imaginative play. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Spends an excessively long period of time doing one activity or is focused on a certain interest."> Spends an excessively long period of time doing one activity or is focused on a certain interest. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Follows strict routine or rituals that have no function."> Follows strict routine or rituals that have no function. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Has repetitive behavior like hand flapping, rocking, ear flicking, spinning in circles, tip toe walking, etc."> Has repetitive behavior like hand flapping, rocking, ear flicking, spinning in circles, tip toe walking,
+                etc.
+            </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Is preoccupied with parts of objects, spins wheels, focuses on s part of a toy, and takes apart toys."> Is preoccupied with parts of objects, spins wheels, focuses on s part of a toy, and takes apart toys.</label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Child is oversensitive to sound."> Child is oversensitive to sound. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Child is oversensitive to texture."> Child is oversensitive to texture. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Child is oversensitive to smell."> Child is oversensitive to smell. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Child does not like to be hugged, kissed or touched."> Child does not like to be hugged, kissed or touched. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="autism" value="Child is a very picky eater."> Child is a very picky eater. </label>
+            <br/>
+            <br/>
+            <hr/>
+            <h3>Learning Issues</h3>
+            <label>
+                <input type="checkbox" class="learning" value="Has 504 Plan in school."> Has 504 Plan in school. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="learning" value="Has IEP in school."> Has IEP in school. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="learning" value="Has been diagnosed with Learning disability."> Has been diagnosed with Learning disability. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="learning" value="Has been evaluated by Child Find."> Has been evaluated by Child Find. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="learning" value="Is in ESOL Program for children who speak or have family member that speak a foreign language."> Is in ESOL Program for children who speak or have family member that speak a foreign language. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="learning" value="Is in ESE program."> Is in ESE program. </label>
+            <br/>
+            <br/>
+            <hr/>
+            <h3>Seizures</h3>
+            <label>
+                <input type="checkbox" class="seizures" value="Had a convulsive or Grand mal seizure in the past with or without fever."> Had a convulsive or Grand mal seizure in the past with or without fever. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="seizures" value="Has staring spells and will not respond when touched during these spells."> Has staring spells and will not respond when touched during these spells. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="seizures" value="Has episodes of sudden confusion, dropping things, or loss of awareness."> Has episodes of sudden confusion, dropping things, or loss of awareness. </label>
+            <br/>
+            <br/>
+            <hr/>
+            <h3>Sleep</h3>
+            <label>
+                <input type="checkbox" class="sleep" value="Has difficulty falling asleep."> Has difficulty falling asleep. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="sleep" value="Has difficulty in maintaining asleep."> Has difficulty in maintaining asleep. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="sleep" value="Snores while sleeping."> Snores while sleeping. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="sleep" value="Has difficulty breathing during sleep."> Has difficulty breathing during sleep. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="sleep" value="Has other sleep issues."> Has other sleep issues. </label>
+            <br/>
+            <br/>
+            <hr/>
+            <h3>Vision</h3>
+            <label>
+                <input type="checkbox" class="vision" value="Wears glasses."> Wears glasses. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="vision" value="Had vision evaluation done at Pediatrician's Office."> Had vision evaluation done at Pediatrician's Office. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="vision" value="Had vision evaluation by Ophthalmologist."> Had vision evaluation by Ophthalmologist. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="vision" value="Had an abnormal vision exam."> Had an abnormal vision exam. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="vision" value="Has other vision related problems."> Has other vision related problems. </label>
+            <br/>
+            <br/>
+            <hr/>
+            <h3>Hearing</h3>
+            <label>
+                <input type="checkbox" class="hearing" value="Has hearing loss."> Has hearing loss. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="hearing" value="Had a hearing screening done."> Had a hearing screening done. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="hearing" value="Had Auditory Brainstem Response (ABR) done in past."> Had Auditory Brainstem Response (ABR) done in past. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="hearing" value="Has other hearing related problems."> Has other hearing related problems. </label>
+            <br/>
+            <br/>
+            <hr/>
+            <h3>Tics</h3>
+            <label>
+                <input type="checkbox" class="tics" value="Has persistent motor movements."> Has persistent motor movements. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="tics" value="Blinks frequently and repetitively."> Blinks frequently and repetitively. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="tics" value="Shrugs shoulders."> Shrugs shoulders. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="tics" value="Makes grimacing facial expressions."> Makes grimacing facial expressions. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="tics" value="Has eye rolling and deviation."> Has eye rolling and deviation. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="tics" value="Stretches mouth."> Stretches mouth. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="tics" value="Has neck movements."> Has neck movements. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="tics" value="Has Vocal Tics."> Has Vocal Tics. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="tics" value="Coughs."> Coughs. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="tics" value="Throat Clearing."> Throat Clearing. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="tics" value="Grunting."> Grunting. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="tics" value="Sniffing."> Sniffing. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="tics" value="Coprolalia."> Coprolalia. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="tics" value="Echolalia."> Echolalia. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="tics" value="Other Tics"> Other Tics </label>
+            <br/>
+            <br/>
+            <hr/>
+            <h3>Does the patient have any of the following?</h3>
+            <label>
+                <input type="checkbox" class="historyOf" value="Thyroid problems."> Thyroid problems. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="historyOf" value="Glaucoma."> Glaucoma. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="historyOf" value="Chest pains."> Chest pains. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="historyOf" value="Heart problems."> Heart problems. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="historyOf" value="Heart murmur."> Heart murmur. </label>
+            <br/>
+            <br/>
+            <hr/>
+            <h3>Has the patient seen these Specialists?</h3>
+            <label>
+                <input type="checkbox" class="specialists" value="Cardiologist."> Cardiologist. </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="specialists" value="Endocrinologist."> Endocrinologist. </label>
+            <br/>
+            <br/>
+
+
+            <hr/>
+            <h3>Attention Deficit Hyperactivity Disorder (ADHD)</h3>
+            <h4>Inattention</h4>
+            <p>The patient fails to give close attention to details or makes careless mistakes.</p>
+            <label>
+                <input type="radio" required name="details" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="details" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="details" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="details" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <p> The patient has difficulty sustaining attention in tasks or play activities. </p>
+            <label>
+                <input type="radio" required name="sustaining" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="sustaining" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="sustaining" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="sustaining" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <p> Does not listen when spoken to directly. </p>
+            <label>
+                <input type="radio" required name="listen" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="listen" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="listen" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="listen" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <p> Does not follow instructions and fails to finish school work. </p>
+            <label>
+                <input type="radio" required name="instructions" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="instructions" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="instructions" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="instructions" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <p> Has difficulty organizing tasks and activities. </p>
+            <label>
+                <input type="radio" required name="organizing" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="organizing" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="organizing" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="organizing" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <p> Avoids, dislikes or is reluctant to engage in tasks that require sustained mental effort. </p>
+            <label>
+                <input type="radio" required name="mental" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="mental" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="mental" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="mental" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <p> Loses things necessary for tasks or activities at school or at home (e.g toys, pencils, books, assignments).
+            </p>
+            <label>
+                <input type="radio" required name="loses" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="loses" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="loses" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="loses" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <p> Easily distracted by extraneous stimuli. </p>
+            <label>
+                <input type="radio" required name="distracted" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="distracted" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="distracted" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="distracted" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <p> Forgetful in daily activities. </p>
+            <label>
+                <input type="radio" required name="forgetful" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="forgetful" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="forgetful" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="forgetful" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <h4>Hyperactivity</h4>
+            <p> Fidgets with hands or feet or squirms in his/her seat. </p>
+            <label>
+                <input type="radio" required name="fidgets" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="fidgets" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="fidgets" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="fidgets" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <p> Leaves the seat in the classroom or in other situations in which remaining seated is expected. </p>
+            <label>
+                <input type="radio" required name="seating" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="seating" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="seating" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="seating" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <p> Runs about or climbs excessively in situations in which it is inappropriate. </p>
+            <label>
+                <input type="radio" required name="runs" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="runs" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="runs" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="runs" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <p> Has difficulty playing or engaging in leisure activities quietly. </p>
+            <label>
+                <input type="radio" required name="quietly" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="quietly" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="quietly" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="quietly" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <p> Talks excessively. </p>
+            <label>
+                <input type="radio" required name="talks" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="talks" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="talks" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="talks" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <p> Is "on the go " or often acts as if "driven by motor." </p>
+            <label>
+                <input type="radio" required name="driven" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="driven" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="driven" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="driven" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <p> Has difficulty awaiting turn in games or group situations. </p>
+            <label>
+                <input type="radio" required name="turn" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="turn" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="turn" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="turn" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <p> Blurts out answers to questions before they have been completed. </p>
+            <label>
+                <input type="radio" required name="blurts" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="blurts" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="blurts" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="blurts" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+            <p> Interrupts or intrudes on others. </p>
+            <label>
+                <input type="radio" required name="interrupts" value="0">Never&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="interrupts" value="1">Not Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="interrupts" value="2">Often&nbsp;&nbsp;&nbsp;</label>
+            <label>
+                <input type="radio" required name="interrupts" value="3">All the time&nbsp;&nbsp;&nbsp;</label>
+            <br>
+            <br>
+
+
+
+            <br/>
+            <br/>
+            <br/>
+            <input type="Submit" value="Submit" />
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBImyqi96ixDENotso6AuW-XYKBZ8i6QzY",
+            authDomain: "kidsneur.firebaseapp.com",
+            databaseURL: "https://kidsneur.firebaseio.com",
+            projectId: "kidsneur",
+            storageBucket: "kidsneur.appspot.com",
+            messagingSenderId: "1025459044469"
+        };
+        firebase.initializeApp(config);
+
+        var xxxRef = firebase.database().ref('neurobehavior');
+
+        document.getElementById("xxxForm").addEventListener("submit", submitForm);
+
+        function submitForm(e) {
+            e.preventDefault();
+
+            var chartNumber = getInputValues("chartNumber");
+            //var dob = getInputValues("dob");;
+            //var gender = $('input[name="gender"]:checked').val();
+            var completedByRelationship = $('input[name="completedByRelationship"]:checked').val();
+
+
+            var referral = "\n\n" + getReferralReport();
+
+
+            var concernedAbout = "\n\nCONCERNS \n" + getValuesConcernedAbout(completedByRelationship) + ".\n\nThe " + completedByRelationship + " reported the following symptoms:" ;
+            //alert(concernedAbout);
+
+            var behavior = "\n\nDEFIANCE, AGGRESSION, MOOD DISORDER, OR PSYCHOSIS \n" + getValuesBehavior(completedByRelationship);
+            //alert(behavior);
+
+            var autism = "\n\nAUTISM \n" + getValuesAutism(completedByRelationship);
+            //alert(autism);
+
+            var learning = "\n\nLEARNING \n" + getValuesLearning(completedByRelationship);
+            //alert(learning);
+
+            var seizures = "\n\nSEIZURES \n" + getValuesSeizures(completedByRelationship);
+            //alert(seizures);
+
+            var sleep = "\n\nSLEEP \n" + getValuesSleep(completedByRelationship);
+            //alert(sleep);
+
+            var vision = "\n\nVISION \n" + getValuesVision(completedByRelationship);
+            //alert(vision);
+
+            var hearing = "\n\nHEARING \n" + getValuesHearing(completedByRelationship);
+            //alert(hearing);
+
+            var tics = "\n\nTICS \n" + getValuesTics(completedByRelationship);
+            //alert(tics);
+
+            var historyOf = "\n\nHEART, THYROID, OR GLAUCOMA \n" + getValuesHistoryOf(completedByRelationship);
+            //alert(historyOf);
+
+            var specialists = "\n\nSPECIALISTS SEEN \n" + getValuesSpecialists(completedByRelationship);
+            //alert(specialists);
+
+            var adhd = getADHDreport(completedByRelationship);
+            //alert(adhd);
+
+
+            saveData(chartNumber, completedByRelationship, referral, concernedAbout, behavior, autism, learning, seizures, sleep, vision, hearing, tics, historyOf, specialists, adhd);
+            alert("Successfully Submitted");
+            $('#xxxForm')[0].reset();
+            window.location = "../";
+        }
+
+        function getADHDreport(completedByRelationship) {
+            var inattentiveScore = 0;
+            var hyperactivityScore = 0;
+            var reportText = "\n\nADHD \n\n";
+            reportText += "Inattentive:\n";
+            
+            var details = $('input[name="details"]:checked').val();
+            if ((details == 2) | (details == 3)) {
+                inattentiveScore++;
+                reportText += "The patient fails to give close attention to details or makes careless mistakes.  ";
+            }
+            
+            var sustaining = $('input[name="sustaining"]:checked').val();
+            if ((sustaining == 2) | (sustaining == 3)) {
+                inattentiveScore++;
+                reportText += "The patient has difficulty sustaining attention in tasks or play activities.  ";
+            }
+            
+            var listen = $('input[name="listen"]:checked').val();
+            if ((listen == 2) | (listen == 3)) {
+                inattentiveScore++;
+                reportText += "Does not listen when spoken to directly.  ";
+            }
+
+            var instructions = $('input[name="instructions"]:checked').val();
+            if ((instructions == 2) | (instructions == 3)) {
+                inattentiveScore++;
+                reportText += "Does not follow instructions and fails to finish school work.  ";
+            }
+
+            var organizing = $('input[name="organizing"]:checked').val();
+            if ((organizing == 2) | (organizing == 3)) {
+                inattentiveScore++;
+                reportText += "Has difficulty organizing tasks and activities.  ";
+            }
+
+            var mental = $('input[name="mental"]:checked').val();
+            if ((mental == 2) | (mental == 3)) {
+                inattentiveScore++;
+                reportText += "Avoids, dislikes or is reluctant to engage in tasks that require sustained mental effort.  ";
+            }
+
+            var loses = $('input[name="loses"]:checked').val();
+            if ((loses == 2) | (loses == 3)) {
+                inattentiveScore++;
+                reportText += "Loses things necessary for tasks or activities at school or at home (e.g toys, pencils, books, assignments).  ";
+            }
+
+            var distracted = $('input[name="distracted"]:checked').val();
+            if ((distracted == 2) | (distracted == 3)) {
+                inattentiveScore++;
+                reportText += "Easily distracted by extraneous stimuli.  ";
+            }
+
+            var forgetful = $('input[name="forgetful"]:checked').val();
+            if ((forgetful == 2) | (forgetful == 3)) {
+                inattentiveScore++;
+                reportText += "Forgetful in daily activities.  ";
+            }
+            
+            reportText += "\nTotal Score for Inattention: " + inattentiveScore + ".";
+            //-------------------------------------------------------------------------------------
+            reportText += "\n\nHyperactivity:\n";
+
+            var fidgets = $('input[name="fidgets"]:checked').val();
+            if ((fidgets == 2) | (fidgets == 3)) {
+                hyperactivityScore++;
+                reportText += "Fidgets with hands or feet or squirms in his/her seat.  ";
+            }
+            
+            var seating = $('input[name="seating"]:checked').val();
+            if ((seating == 2) | (seating == 3)) {
+                hyperactivityScore++;
+                reportText += "Leaves the seat in the classroom or in other situations in which remaining seated is expected.  ";
+            }
+            
+            var runs = $('input[name="runs"]:checked').val();
+            if ((runs == 2) | (runs == 3)) {
+                hyperactivityScore++;
+                reportText += "Runs about or climbs excessively in situations in which it is inappropriate.  ";
+            }
+            
+            var quietly = $('input[name="quietly"]:checked').val();
+            if ((quietly == 2) | (quietly == 3)) {
+                hyperactivityScore++;
+                reportText += "Has difficulty playing or engaging in leisure activities quietly.  ";
+            }
+            
+            var talks = $('input[name="talks"]:checked').val();
+            if ((talks == 2) | (talks == 3)) {
+                hyperactivityScore++;
+                reportText += "Talks excessively.  ";
+            }
+            
+            var driven = $('input[name="driven"]:checked').val();
+            if ((driven == 2) | (driven == 3)) {
+                hyperactivityScore++;
+                reportText += "Is 'on the go,' or often acts as if 'driven by a motor.'  ";
+            }
+            
+            var turn = $('input[name="turn"]:checked').val();
+            if ((turn == 2) | (turn == 3)) {
+                hyperactivityScore++;
+                reportText += "Has difficulty awaiting turn in games or group situations.  ";
+            }
+            
+            var blurts = $('input[name="blurts"]:checked').val();
+            if ((blurts == 2) | (blurts == 3)) {
+                hyperactivityScore++;
+                reportText += "Blurts out answers to questions before they have been completed.  ";
+            }
+            
+            var interrupts = $('input[name="interrupts"]:checked').val();
+            if ((interrupts == 2) | (interrupts == 3)) {
+                hyperactivityScore++;
+                reportText += "Interrupts or intrudes on others.  ";
+            }
+            
+            reportText += "\nTotal Score for Hyperactivity: " + hyperactivityScore + "\n";
+
+            //--------------------------------------------------------------------------------------           
+            
+            reportText += "\nADHD Evaluation: \n";
+            
+                        
+            if ((inattentiveScore > 5) & (hyperactivityScore > 5))
+            {
+                reportText += "Based upon information provided by " + completedByRelationship + ", the patient may have ADHD-Combined Inattentive/Hyperactivity.\n";
+            }
+            else if ((inattentiveScore > 5) & (hyperactivityScore < 6))
+            {
+                reportText += "Based upon information provided by " + completedByRelationship + ", the patient may have ADHD-Predominantly Inattentive subtype.\n";
+            }
+            else if ((inattentiveScore < 6) & (hyperactivityScore > 5))
+            {
+                reportText += "Based upon information provided by " + completedByRelationship + ", the patient may have ADHD-Predominantly Hyperactive/Impulsive subtype.\n";
+            }
+            else
+            {
+                reportText += "The patient does not seem to meet the criteria for ADHD based upon the information provided by " + completedByRelationship + ".\n";
+            }
+
+            return reportText;
+        }
+
+
+        function getReferralReport() {
+            var referredPediatrician = $('input[name="referredPediatrician"]:checked').val();
+            var previouslySeen = $('input[name="previouslySeen"]:checked').val();
+            var psychiatricFacility = $('input[name="psychiatricFacility"]:checked').val();
+
+            var referral = "REFERRAL\n\n";
+            //alert(referredPediatrician + " " + previouslySeen + " " + psychiatricFacility);
+            if ((referredPediatrician == "true") & (previouslySeen == "true") & (psychiatricFacility == "true")) {
+                referral += "The patient was referred for evaluation by the pediatrician.  The patient has previously been seen by a neurologist or psychiatrist.  The patient was referred to Kids Neurology from a Psychiatric facility, and will continue treatment and medication there.";
+            }
+            else if ((referredPediatrician == "true") & (previouslySeen == "true") & (psychiatricFacility == "false")) {
+                referral += "The patient was referred for evaluation by the pediatrician.  The patient has previously been seen by a neurologist or psychiatrist.";
+            }
+            else if ((referredPediatrician == "true") & (previouslySeen == "false") & (psychiatricFacility == "false")) {
+                referral += "The patient was referred for evaluation by the pediatrician.";
+            }
+            else if ((referredPediatrician == "false") & (previouslySeen == "true") & (psychiatricFacility == "true")) {
+                referral += "The patient has previously been seen by a neurologist or psychiatrist.  The patient was referred to Kids Neurology from a Psychiatric facility, and will continue treatment and medication there.";
+            }
+            else if ((referredPediatrician == "false") & (previouslySeen == "false") & (psychiatricFacility == "true")) {
+                referral += "The patient was referred to Kids Neurology from a Psychiatric facility, and will continue treatment and medication there.";
+            }
+            else if ((referredPediatrician == "false") & (previouslySeen == "true") & (psychiatricFacility == "false")) {
+                referral += "The patient has previously been seen by a neurologist or psychiatrist.";
+            }
+            else {
+                referral += "The patient was self-referred and has not previously been seen by a neurologist or psychiatrist.";
+            }
+            return referral;
+        }
+
+
+
+
+        function getValuesHistoryOf(completedByRelationship) {
+            /* declare an checkbox array */
+            var chkArray = [];
+
+            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+            $(".historyOf:checked").each(function () {
+                chkArray.push($(this).val());
+            });
+
+            /* we join the array separated by the comma */
+            var selected;
+            selected = chkArray.join('  ');
+
+            /* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
+            if (selected.length > 1) {
+                return ("Has a history of the following: " + selected);
+            } else {
+                return ("No issues were reported.");
+            }
+        }
+
+
+        function getValuesSpecialists(completedByRelationship) {
+            /* declare an checkbox array */
+            var chkArray = [];
+
+            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+            $(".specialists:checked").each(function () {
+                chkArray.push($(this).val());
+            });
+
+            /* we join the array separated by the comma */
+            var selected;
+            selected = chkArray.join('  ');
+
+            /* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
+            if (selected.length > 1) {
+                return ("The patient has seen the following specialist(s): " + selected);
+            } else {
+                return ("Patient has not been seen by either an Endocrinologist or Cardiologist.");
+            }
+        }
+
+        function getValuesLearning(completedByRelationship) {
+            /* declare an checkbox array */
+            var chkArray = [];
+
+            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+            $(".learning:checked").each(function () {
+                chkArray.push($(this).val());
+            });
+
+            /* we join the array separated by the comma */
+            var selected;
+            selected = chkArray.join('  ');
+
+            /* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
+            if (selected.length > 1) {
+                return (selected);
+            } else {
+                return ("No issues were reported.");
+            }
+        }
+
+
+        function getValuesSeizures(completedByRelationship) {
+            /* declare an checkbox array */
+            var chkArray = [];
+
+            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+            $(".seizures:checked").each(function () {
+                chkArray.push($(this).val());
+            });
+
+            /* we join the array separated by the comma */
+            var selected;
+            selected = chkArray.join('  ');
+
+            /* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
+            if (selected.length > 1) {
+                return (selected);
+            } else {
+                return ("No issues were reported.");
+            }
+        }
+
+
+        function getValuesSleep(completedByRelationship) {
+            /* declare an checkbox array */
+            var chkArray = [];
+
+            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+            $(".sleep:checked").each(function () {
+                chkArray.push($(this).val());
+            });
+
+            /* we join the array separated by the comma */
+            var selected;
+            selected = chkArray.join('  ');
+
+            /* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
+            if (selected.length > 1) {
+                return (selected);
+            } else {
+                return ("No issues were reported.");
+            }
+        }
+
+
+        function getValuesVision(completedByRelationship) {
+            /* declare an checkbox array */
+            var chkArray = [];
+
+            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+            $(".vision:checked").each(function () {
+                chkArray.push($(this).val());
+            });
+
+            /* we join the array separated by the comma */
+            var selected;
+            selected = chkArray.join('  ');
+
+            /* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
+            if (selected.length > 1) {
+                return (selected);
+            } else {
+                return ("No issues were reported.");
+            }
+        }
+
+
+        function getValuesHearing(completedByRelationship) {
+            /* declare an checkbox array */
+            var chkArray = [];
+
+            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+            $(".hearing:checked").each(function () {
+                chkArray.push($(this).val());
+            });
+
+            /* we join the array separated by the comma */
+            var selected;
+            selected = chkArray.join('  ');
+
+            /* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
+            if (selected.length > 1) {
+                return (selected);
+            } else {
+                return ("No issues were reported.");
+            }
+        }
+
+
+        function getValuesTics(completedByRelationship) {
+            /* declare an checkbox array */
+            var chkArray = [];
+
+            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+            $(".tics:checked").each(function () {
+                chkArray.push($(this).val());
+            });
+
+            /* we join the array separated by the comma */
+            var selected;
+            selected = chkArray.join('  ');
+
+            /* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
+            if (selected.length > 1) {
+                return (selected);
+            } else {
+                return ("No issues were reported.");
+            }
+        }
+
+
+        function getValuesAutism(completedByRelationship) {
+            /* declare an checkbox array */
+            var chkArray = [];
+
+            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+            $(".autism:checked").each(function () {
+                chkArray.push($(this).val());
+            });
+
+            /* we join the array separated by the comma */
+            var selected;
+            selected = chkArray.join('  ');
+
+            /* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
+            if (selected.length > 1) {
+                return (selected);
+            } else {
+                return ("No issues were reported.");
+            }
+        }
+
+
+        function getValuesBehavior(completedByRelationship) {
+            /* declare an checkbox array */
+            var chkArray = [];
+
+            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+            $(".behavior:checked").each(function () {
+                chkArray.push($(this).val());
+            });
+
+            /* we join the array separated by the comma */
+            var selected;
+            selected = chkArray.join('  ');
+
+            /* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
+            if (selected.length > 1) {
+                return (selected);
+            } else {
+                return ("No issues were reported.");
+            }
+        }
+
+
+        function getValuesConcernedAbout(completedByRelationship) {
+            /* declare an checkbox array */
+            var chkArray = [];
+
+            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+            $(".concernedAbout:checked").each(function () {
+                chkArray.push($(this).val());
+            });
+
+            /* we join the array separated by the comma */
+            var selected;
+            selected = chkArray.join('.  ');
+
+            /* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
+            if (selected.length > 1) {
+                return (selected);
+            } else {
+                return ("The " + completedByRelationship + " did not express any concern about any neuro-behavior condition");
+            }
+        }
+
+
+        function getInputValues(id) {
+            return document.getElementById(id).value;
+        }
+
+
+        function saveData(chartNumber, completedByRelationship, referral, concernedAbout, behavior, autism, learning, seizures, sleep, vision, hearing, tics, historyOf, specialists, adhd) {
+            var newRef = xxxRef.push();
+            newRef.set({
+                chartNumber: chartNumber,
+                //dob: dob,
+                //gender: gender,
+                completedByRelationship: completedByRelationship,
+                referral: referral,
+                concernedAbout: concernedAbout,
+                behavior: behavior,
+                autism: autism,
+                learning: learning,
+                seizures: seizures,
+                sleep: sleep,
+                vision: vision,
+                hearing: hearing,
+                tics: tics,
+                historyOf: historyOf,
+                specialists: specialists,
+                adhd: adhd,
+                trashed: false,
+                createdAt: Date.now()
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>

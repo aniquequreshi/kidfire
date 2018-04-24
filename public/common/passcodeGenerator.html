@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> Password - Kids Neurology</title>
+    <style>
+        body {
+            background-color: lightsteelblue;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div style="margin:0 auto;width:75%;text-align:left">
+        <h1>Generate Password</h1>
+        <form id="xxxForm" autocomplete="off">
+
+            <h4>Chart Number:
+                <input type="number" required name="chartNumber" id="chartNumber" />
+            </h4>
+
+            <br/>
+            <input type="Submit" value="Submit" />
+            <br/>
+            <br/>
+            <div id = "display">
+
+            </div>
+            <br/>
+            <br/>
+            <br/>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+ <script>
+        document.getElementById("xxxForm").addEventListener("submit", submitForm);
+
+        function submitForm(e) {
+            e.preventDefault();
+
+            var code = getInputValues("chartNumber");
+ 
+            alert(code);
+            $('#xxxForm')[0].reset();
+        }
+
+        function getInputValues(id) {
+            chartNumber = parseInt(document.getElementById(id).value);
+            return (chartNumber.toString(7))
+        }
+
+    </script>
+</body>
+
+</html>

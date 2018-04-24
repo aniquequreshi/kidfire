@@ -1,0 +1,1212 @@
+<html>
+
+<head>
+    <title>Headache Report - Kids Neurology</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style type="text/css">
+        textarea {
+            width: 800px;
+            height: 350px;
+            background-color: lightyellow;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="/reports">Home</a>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button onClick='logout()'>Logout</button>
+    <br>
+
+    <h1>Headache Report</h1>
+
+    <br>
+    <div id="displayGrid">
+
+    </div>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBImyqi96ixDENotso6AuW-XYKBZ8i6QzY",
+            authDomain: "kidsneur.firebaseapp.com",
+            databaseURL: "https://kidsneur.firebaseio.com",
+            projectId: "kidsneur",
+            storageBucket: "kidsneur.appspot.com",
+            messagingSenderId: "1025459044469"
+        };
+        firebase.initializeApp(config);
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in.
+                startUp();
+            } else {
+                // No user is signed in.
+                window.location = "../login.html";
+            }
+        });
+
+        var xxxRef = firebase.database().ref('headache');
+
+
+        $(document).ready(startUp);
+        //window.onload = startUp;
+
+
+        //document.getElementById("get-follow-up-medical-history-form").addEventListener("submit", submitForm);
+        function logout() {
+            //alert("logging out");
+            firebase.auth().signOut();
+        }
+
+        function startUp() {
+            readDataContinuously();
+        }
+
+        // NOT USED, BUT IS GOOD FOR READ ONCE
+        // Do NOT delete
+        /* function readDataOnce() {
+ 
+            //document.getElementById("reportText").value = "";
+            //var displayGrid = "";
+            var userDataRef = followUpMedHxRef.orderByChild('trashed').equalTo(false).limitToLast(100);
+            userDataRef.once("value").then(function (snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                    //console.log(snapshot.val());
+                    var key = childSnapshot.key;
+                    var childData = childSnapshot.val();
+ 
+                    var chiefComplaint_val = childSnapshot.val().chiefComplaint;
+                    var gender_val = childSnapshot.val().gender;
+                    var chartNumber_val = childSnapshot.val().chartNumber;
+                    var key_val = childSnapshot.key;
+                    var trashed_val = childSnapshot.val().trashed;
+ 
+ 
+                    displayGrid += "<input type='button' onclick='copyToClipboard(\"" + key_val + "\")' value='SELECT ALL Chart Number: " + chartNumber_val + "'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+ 
+                    displayGrid += "<input type='button' onclick='trashChart(\"" + key_val + "\")' value='DELETE Chart Number: " + chartNumber_val + "'/><BR><BR>";
+                    
+                    displayGrid += "<textarea id='ta_" + key_val + "'>" + reportText + "</textarea>";
+                    
+                    var reportText = "";
+                    reportText += "Chart Number: " + chartNumber_val + "\n\n";
+                    reportText += "Chief Complaint: " + chiefComplaint_val + "\n\n";
+                    //document.getElementById("reportText").value = reportText;
+ 
+                    
+ 
+                    //document.getElementById("displayGrid").innerHTML = displayGrid;
+                    //displayGrid += "<input type='button' onclick='patientSelected(\"" + key_val + "\")' value='" + chartNumber_val + "'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+                    //displayGrid += "<label>" + chartNumber_val + "</label>&nbsp;&nbsp;&nbsp;&nbsp;";
+ 
+                });
+                //WORKS: To append to display grid
+                $("#displayGrid").append(displayGrid);
+                //readDataContinuously();
+            });
+ 
+        }
+ */
+        function readDataContinuously() { }
+        var displayGrid = "";
+        //document.getElementById("reportText").value = "";
+        //will retrieve data of newly added child along with previous child's key
+        var userDataRef = xxxRef.orderByChild('trashed').equalTo(false);
+        userDataRef.on("child_added", function (data) {
+            var childData = data.val();
+            var primaryKey = data.key;
+            var chartNumber = childData.chartNumber;
+            var completedByRelationship = childData.completedByRelationship;
+            var trashed = childData.trashed;
+            var createdAt = new Date(childData.createdAt);
+
+            var duration = childData.duration;
+            var kind = childData.kind;
+            var located = childData.located;
+            var progression = childData.progression;
+            var gottenWorse, sinceWhen;
+            if (progression == "gotten worse") {
+                gottenWorse = childData.gottenWorse;
+                sinceWhen = childData.sinceWhen;
+            }
+            else {
+                gottenWorse = "";
+                sinceWhen = "";
+            }
+            var worsensWith = childData.worsensWith;
+            var severity = childData.severity;
+            var severityScale = childData.severityScale;
+            var nature = childData.nature;
+            var quality = childData.quality;
+            var frequency = childData.frequency;
+            var timing = childData.timing;
+            var wakeUpFromSleep = childData.wakeUpFromSleep;
+            var vomiting = childData.vomiting;
+            var aura = childData.aura;
+            var treatement = childData.treatement;
+            var painKillers = childData.painKillers;
+            var sleepingResolves = childData.sleepingResolves;
+            var looksIll = childData.looksIll;
+            var appetiteLoss = childData.appetiteLoss;
+            var allergiesHx = childData.allergiesHx;
+            var skipMeals = childData.skipMeals;
+            var visionChecked = childData.visionChecked;
+
+            var glassesPrescribed;
+            var wearsGlasses;
+            if (visionChecked == "yes") {
+                glassesPrescribed = childData.glassesPrescribed;
+                if (glassesPrescribed == "yes") {
+                    wearsGlasses = childData.wearsGlasses;
+                }
+                else {
+                    wearsGlasses = "";
+                }
+            }
+            else {
+                glassesPrescribed = "";
+                wearsGlasses = "";
+            }
+
+            var snoringHx = childData.snoringHx;
+            var snoringWakeUp;
+            if (snoringHx == "yes") {
+                snoringWakeUp = childData.snoringWakeUp;
+            }
+            else {
+                snoringWakeUp = "";
+            }
+
+            var sodaFrequency = childData.sodaFrequency;
+            var chocolateFrequency = childData.chocolateFrequency;
+            var smokedMeatsFrequency = childData.smokedMeatsFrequency;
+
+            var vitaminsSteroids = childData.vitaminsSteroids;
+            var sinus = childData.sinus;
+            var fallingAsleep = childData.fallingAsleep;
+            var maintainingSleep = childData.maintainingSleep;
+
+            var ageSeven = childData.ageSeven;
+            var depression, ageThirteen, drugAbuse, diffusedBodyAchesPain;
+            if (ageSeven == "yes") {
+                depression = childData.depression;
+                ageThirteen = childData.ageThirteen;
+                if (ageThirteen == "yes") {
+                    drugAbuse = childData.drugAbuse;
+                    diffusedBodyAchesPain = childData.diffusedBodyAchesPain;
+                }
+                else {
+                    drugAbuse = "";
+                    diffusedBodyAchesPain = "";
+                }
+            }
+            else {
+                depression = "";
+                ageThirteen = "";
+                drugAbuse = "";
+                diffusedBodyAchesPain = "";
+            }
+
+            var thyroid = childData.thyroid;
+            var weightChange = childData.weightChange;
+            var missedSchool = childData.missedSchool;
+
+            var schoolPerformance = childData.schoolPerformance;
+            var trauma = childData.trauma;
+            var travelled = childData.travelled;
+
+            var blurredVision = childData.blurredVision;
+            var doubleVision = childData.doubleVision;
+            var poorBalance = childData.poorBalance;
+            var swallowingDifficulty = childData.swallowingDifficulty;
+            var nystagmus = childData.nystagmus;
+            var speechChanges = childData.speechChanges;
+            var nausea = childData.nausea;
+            var vomitingWithHeadache = childData.vomitingWithHeadache;
+            var lightSensitivity = childData.lightSensitivity;
+            var soundSensitivity = childData.soundSensitivity;
+            var dizziness = childData.dizziness;
+            var vertigo = childData.vertigo;
+            var fever = childData.fever;
+            var weaknessOneSide = childData.weaknessOneSide;
+            var numbnessTingling = childData.numbnessTingling;
+            var neckPain = childData.neckPain;
+            var staringSpells = childData.staringSpells;
+            var seizuresConvulsions = childData.seizuresConvulsions;
+            var confusionDisorientation = childData.confusionDisorientation;
+
+
+
+            var headacheMedication = childData.headacheMedication;
+            var propranolol, propranololEffective, periactin, periactinEffective, elavil, elavilEffective, topamax, topamaxEffective, depakote, depakoteEffective, tylenol, tylenolEffective, motrinIbuprofen, motrinIbuprofenEffective, aleveNaproxen, aleveNaproxenEffective, midrin, midrinEffective, fioricet, fioricetEffective, zomig, zomigEffective, imitrex, imitrexEffective, relpax, relpaxEffective, bcPowder, bcPowderEffective, ergocaff, ergocaffEffective, migranal, migranalEffective, excedrinMigraine, excedrinMigraineEffective, otherHeadacheMedication, otherHeadacheMedicationEffective;
+
+            if (headacheMedication == "no") {
+                propranolol = ""; propranololEffective = ""; periactin = ""; periactinEffective = ""; elavil = ""; elavilEffective = ""; topamax = ""; topamaxEffective = ""; depakote = ""; depakoteEffective = ""; tylenol = ""; tylenolEffective = ""; motrinIbuprofen = ""; motrinIbuprofenEffective = ""; aleveNaproxen = ""; aleveNaproxenEffective = ""; midrin = ""; midrinEffective = ""; fioricet = ""; fioricetEffective = ""; zomig = ""; zomigEffective = ""; imitrex = ""; imitrexEffective = ""; relpax = ""; relpaxEffective = ""; bcPowder = ""; bcPowderEffective = ""; ergocaff = ""; ergocaffEffective = ""; migranal = ""; migranalEffective = ""; excedrinMigraine = ""; excedrinMigraineEffective = ""; otherHeadacheMedication = ""; otherHeadacheMedicationEffective = "";
+            }
+            else {
+                propranolol = childData.propranolol;
+                periactin = childData.periactin;
+                elavil = childData.elavil;
+                topamax = childData.topamax;
+                depakote = childData.depakote;
+                tylenol = childData.tylenol;
+                motrinIbuprofen = childData.motrinIbuprofen;
+                aleveNaproxen = childData.aleveNaproxen;
+                midrin = childData.midrin;
+                fioricet = childData.fioricet;
+                zomig = childData.zomig;
+                imitrex = childData.imitrex;
+                relpax = childData.relpax;
+                bcPowder = childData.bcPowder;
+                ergocaff = childData.ergocaff;
+                migranal = childData.migranal;
+                excedrinMigraine = childData.excedrinMigraine;
+                otherHeadacheMedication = childData.otherHeadacheMedication;
+                if (propranolol == "yes") {
+                    propranololEffective = childData.propranololEffective;
+                }
+                else {
+                    propranololEffective = "";
+                }
+
+                if (periactin == "yes") {
+                    periactinEffective = childData.periactinEffective;
+                }
+                else {
+                    periactinEffective = "";
+                }
+
+                if (elavil == "yes") {
+                    elavilEffective = childData.elavilEffective;
+                }
+                else {
+                    elavilEffective = "";
+                }
+
+                if (topamax == "yes") {
+                    topamaxEffective = childData.topamaxEffective;
+                }
+                else {
+                    topamaxEffective = "";
+                }
+
+                if (depakote == "yes") {
+                    depakoteEffective = childData.depakoteEffective;
+                }
+                else {
+                    depakoteEffective = "";
+                }
+
+                if (tylenol == "yes") {
+                    tylenolEffective = childData.tylenolEffective;
+                }
+                else {
+                    tylenolEffective = "";
+                }
+
+                if (motrinIbuprofen == "yes") {
+                    motrinIbuprofenEffective = childData.motrinIbuprofenEffective;
+                }
+                else {
+                    motrinIbuprofenEffective = "";
+                }
+
+                if (aleveNaproxen == "yes") {
+                    aleveNaproxenEffective = childData.aleveNaproxenEffective;
+                }
+                else {
+                    aleveNaproxenEffective = "";
+                }
+
+                if (midrin == "yes") {
+                    midrinEffective = childData.midrinEffective;
+                }
+                else {
+                    midrinEffective = "";
+                }
+
+                if (fioricet == "yes") {
+                    fioricetEffective = childData.fioricetEffective;
+                }
+                else {
+                    fioricetEffective = "";
+                }
+
+                if (zomig == "yes") {
+                    zomigEffective = childData.zomigEffective;
+                }
+                else {
+                    zomigEffective = "";
+                }
+
+                if (imitrex == "yes") {
+                    imitrexEffective = childData.imitrexEffective;
+                }
+                else {
+                    imitrexEffective = "";
+                }
+
+                if (relpax == "yes") {
+                    relpaxEffective = childData.relpaxEffective;
+                }
+                else {
+                    relpaxEffective = "";
+                }
+
+                if (bcPowder == "yes") {
+                    bcPowderEffective = childData.bcPowderEffective;
+                }
+                else {
+                    bcPowderEffective = "";
+                }
+
+                if (ergocaff == "yes") {
+                    ergocaffEffective = childData.ergocaffEffective;
+                }
+                else {
+                    ergocaffEffective = "";
+                }
+
+                if (migranal == "yes") {
+                    migranalEffective = childData.migranalEffective;
+                }
+                else {
+                    migranalEffective = "";
+                }
+
+                if (excedrinMigraine == "yes") {
+                    excedrinMigraineEffective = childData.excedrinMigraineEffective;
+                }
+                else {
+                    excedrinMigraineEffective = "";
+                }
+
+                if (otherHeadacheMedication == "yes") {
+                    otherHeadacheMedicationEffective = childData.otherHeadacheMedicationEffective;
+                }
+                else {
+                    otherHeadacheMedicationEffective = "";
+                }
+            }
+
+
+
+
+            var reportText = "";
+            reportText += "Chart Number: " + chartNumber + "\n";
+            reportText += "\n";
+
+            reportText += "The patient has had headaches for ";
+            reportText += duration;
+            reportText += " and experiences ";
+            reportText += kind;;
+            reportText += " of headache(s).  Headache location is described as: ";
+            if (located == "~") {
+                reportText += "NO LOCATION SPECIFIED BY THE PATIENT.  ";
+            }
+            else {
+                reportText += stringBeautify(located) + ".  ";
+            }
+
+
+            reportText += "\n";
+            reportText += "\n";
+
+
+            reportText += "Over time, the headache has ";
+            reportText += progression;
+            reportText += ".  ";
+            if (progression == "gotten worse") {
+                reportText += "Headache is reported to have ";
+                reportText += gottenWorse;
+                reportText += " since ";
+                reportText += sinceWhen;
+                reportText += ".  ";
+            }
+            if (worsensWith == "~") {
+                reportText += "Patient reports that the headaches does NOT worsen with activity, standing, or lying down.  ";
+                //reportText += "";
+            }
+            else {
+                reportText += "Patient reports that the headaches worsens with: ";
+                reportText += stringBeautify(worsensWith);
+                reportText += ".  ";
+            }
+
+            reportText += "Pain is reported to be ";
+            reportText += severity;
+            reportText += ", about ";
+            reportText += severityScale;
+            reportText += ", on a scale of 1 to 10, where 1 is 'Mild' and 10 is 'Very Severe'.  ";
+
+            reportText += "The headache's nature is described as '";
+            reportText += nature;
+            reportText += "' and its quality is described as '";
+            reportText += quality;
+            reportText += ".'  ";
+
+            reportText += "Frequency of headaches is '";
+            reportText += frequency;
+            reportText += ".'  ";
+
+
+            if (timing[0] == "~") {
+                reportText += "Headaches do not usually occur at any specific time.   ";
+            }
+            else {
+                reportText += "Headaches usually occur ";
+                reportText += stringBeautify(timing);
+                reportText += ".  ";
+            }
+
+            if (wakeUpFromSleep == "yes") {
+                reportText += "The headache usually wakes patient up from sleep. ";
+            }
+            else {
+                reportText += "The headache usually does not wake patient up from sleep. ";
+            }
+
+            if (vomiting == "yes") {
+                reportText += "The patient reports vomiting upon awakening. ";
+            }
+            else {
+                reportText += "The patient does not usually vomit upon awakening. ";
+            }
+
+            if (aura == "yes") {
+                reportText += "There is an aura associated with the headache.  ";
+            }
+            else {
+                reportText += "There is no aura associated with the headache.  ";
+            }
+
+            if (treatement == "~") {
+                reportText += "No specific protocol is followed by the patient to treat the headache.   ";
+            }
+            else {
+                reportText += "At the onset of headace, the patient usually ";
+                reportText += stringBeautify(treatement);
+                reportText += ".  ";
+            }
+
+            reportText += "Sleeping ";
+            reportText += sleepingResolves;
+            reportText += " the patient's headache.  ";
+
+            reportText += "During headaches, the patient ";
+            reportText += looksIll;
+            reportText += " ill.  ";
+
+            reportText += "Headaches ";
+            reportText += appetiteLoss;
+            reportText += " loss of appetite.  ";
+
+            reportText += "\n";
+            reportText += "\n";
+
+            var yesAssociated = "";
+            var noAssociated = "";
+
+            if (blurredVision == "yes") {
+                yesAssociated += "blurred vision, ";
+            }
+            else {
+                noAssociated += "blurred vision, ";
+            }
+
+            if (doubleVision == "yes") {
+                yesAssociated += "double vision, ";
+            }
+            else {
+                noAssociated += "double vision, ";
+            }
+
+            if (poorBalance == "yes") {
+                yesAssociated += "poor balance, ";
+            }
+            else {
+                noAssociated += "poor balance, ";
+            }
+
+            if (swallowingDifficulty == "yes") {
+                yesAssociated += "difficulty in swallowing, ";
+            }
+            else {
+                noAssociated += "difficulty in swallowing, ";
+            }
+
+            if (nystagmus == "yes") {
+                yesAssociated += "nystagmus, ";
+            }
+            else {
+                noAssociated += "nystagmus, ";
+            }
+
+            if (speechChanges == "yes") {
+                yesAssociated += "changes in speech, ";
+            }
+            else {
+                noAssociated += "changes in speech, ";
+            }
+
+            if (nausea == "yes") {
+                yesAssociated += "nausea, ";
+            }
+            else {
+                noAssociated += "nausea, ";
+            }
+
+            if (vomitingWithHeadache == "yes") {
+                yesAssociated += "vomiting, ";
+            }
+            else {
+                noAssociated += "vomiting, ";
+            }
+
+            if (lightSensitivity == "yes") {
+                yesAssociated += "sensitivity to light, ";
+            }
+            else {
+                noAssociated += "sensitivity to light, ";
+            }
+
+            if (soundSensitivity == "yes") {
+                yesAssociated += "sensitivity to sound, ";
+            }
+            else {
+                noAssociated += "sensitivity to sound, ";
+            }
+
+            if (dizziness == "yes") {
+                yesAssociated += "dizziness, ";
+            }
+            else {
+                noAssociated += "dizziness, ";
+            }
+
+            if (vertigo == "yes") {
+                yesAssociated += "vertigo, ";
+            }
+            else {
+                noAssociated += "vertigo, ";
+            }
+
+            if (fever == "yes") {
+                yesAssociated += "fever, ";
+            }
+            else {
+                noAssociated += "fever, ";
+            }
+
+            if (weaknessOneSide == "yes") {
+                yesAssociated += "weakness on one side, ";
+            }
+            else {
+                noAssociated += "weakness on one side, ";
+            }
+
+            if (numbnessTingling == "yes") {
+                yesAssociated += "numbness/tingling, ";
+            }
+            else {
+                noAssociated += "numbness/tingling, ";
+            }
+
+
+            if (neckPain == "yes") {
+                yesAssociated += "neck pain, ";
+            }
+            else {
+                noAssociated += "neck pain, ";
+            }
+
+            if (staringSpells == "yes") {
+                yesAssociated += "staring spells, ";
+            }
+            else {
+                noAssociated += "staring spells, ";
+            }
+
+            if (seizuresConvulsions == "yes") {
+                yesAssociated += "seizures/convulsions, ";
+            }
+            else {
+                noAssociated += "seizures/convulsions, ";
+            }
+
+            if (confusionDisorientation == "yes") {
+                yesAssociated += "confusion/disorientation, ";
+            }
+            else {
+                noAssociated += "confusion/disorientation, ";
+            }
+
+            yesAssociated = stringBeautify2(yesAssociated);
+            noAssociated = stringBeautify2(noAssociated);
+
+            reportText += "The following symptoms are associated with the headache:  ";
+            reportText += yesAssociated;
+            reportText += ".  ";
+
+            reportText += "\n";
+            reportText += "\n";
+
+            reportText += "The following symptoms are NOT associated with the headache:  ";
+            reportText += noAssociated;
+            reportText += ".  ";
+
+            reportText += "\n";
+            reportText += "\n";
+
+
+            if (missedSchool == "never") {
+                reportText += "The patient has never missed school due to headaches.  ";
+            }
+            else if (missedSchool == "few days") {
+                reportText += "The patient has missed a few days of school due to headaches.  ";
+            }
+            else if (missedSchool == "few weeks") {
+                reportText += "The patient has missed a few weeks of school due to headaches.  ";
+            }
+            else if (missedSchool == "homebound") {
+                reportText += "The patient has missed a few weeks of school due to headaches.  ";
+            }
+            else if (missedSchool == "preSchool") {
+                reportText += "Patient is pre-school age and headaches have not affected ability to attend school.  ";
+            }
+
+            if (schoolPerformance == "yes") {
+                reportText += "Patient's academic performance has declined due to headaches.  ";
+            }
+            else {
+                reportText += "Patient's academic performance has not been affected by headaches.  ";
+            }
+
+
+            reportText += "\n";
+            reportText += "\n";
+
+            if (trauma == "yes") {
+                reportText += "The patient recently experienced head trauma.  ";
+            }
+            else {
+                reportText += "There is no history of head trauma.  ";
+            }
+
+            if (travelled == "yes") {
+                reportText += "The patient recently travelled outside the country.  ";
+            }
+            else {
+                reportText += "There is no history of recent travel outside the country.  ";
+            }
+
+
+            reportText += "\n";
+            reportText += "\n";
+
+            reportText += "The patient ";
+            reportText += allergiesHx;
+            reportText += " a history of allergies.  ";
+
+
+            if (thyroid == "yes") {
+                reportText += "Patient has a history of thyroid problems.  ";
+            }
+            else {
+                reportText += "Patient does not have a history of thyroid problems.  ";
+            }
+
+            if (sinus == "yes") {
+                reportText += "Patient has a history of sinus infections.  ";
+            }
+            else {
+                reportText += "Patient does not have a history of sinus infections.  ";
+            }
+
+            if (ageSeven == "yes") {
+                if (depression == "yes") {
+                    reportText += "Patient has a history of depression.  ";
+                }
+                else {
+                    reportText += "Patient does not have a history of depression.  ";
+                }
+                if (ageThirteen == "yes") {
+                    if (drugAbuse == "yes") {
+                        reportText += "Patient has a history of drug abuse.  ";
+                    }
+                    else {
+                        reportText += "Patient reports not having used illicit drugs.  ";
+                    }
+                    if (diffusedBodyAchesPain == "yes") {
+                        reportText += "Patient reports having diffused body aches and pains.  ";
+                    }
+                    else {
+                        reportText += "Patient does not have diffused body aches or pains.  ";
+                    }
+                }
+
+            }
+
+            if (fallingAsleep == "yes") {
+                reportText += "Patient has trouble falling asleep.  ";
+            }
+            else {
+                reportText += "Patient does not have trouble falling asleep.  ";
+            }
+
+            if (maintainingSleep == "yes") {
+                reportText += "Patient reports having trouble maintaining sleep.  ";
+            }
+            else {
+                reportText += "Patient reports not having any trouble maintaining sleep.  ";
+            }
+
+
+
+            if (snoringHx == "yes") {
+                reportText += "The patient has a history of snoring.  ";
+                if (snoringWakeUp == "yes") {
+                    reportText += "The patient reports waking up due to difficulty in breathing.  ";
+                }
+                else if (snoringWakeUp == "no") {
+                    reportText += "The patient does not wake up from sleep due to difficulty in breathing.  ";
+                }
+                else {
+                    reportText += "The patient sometimes wakes up from sleep due to difficulty in breathing.  ";
+                }
+            }
+            else {
+                reportText += "The patient does not have a history of snoring.  ";
+            }
+
+            reportText += "\n";
+            reportText += "\n";
+
+
+            if (visionChecked == "yes") {
+                reportText += "Vision has been checked in the last six months.  ";
+                if (glassesPrescribed == "yes") {
+                    reportText += "Corrective lenses were prescribed.  ";
+                    if (wearsGlasses == "yes") {
+                        reportText += "The patient regularly wears prescribed glasses/contact lenses.  ";
+                    }
+                    else {
+                        reportText += "The patient does NOT regularly wears prescribed glasses/contact lenses.  ";
+                    }
+                }
+                else {
+                    reportText += "Corrective lenses were NOT prescribed.  ";
+                }
+            }
+            else {
+                reportText += "Vision has NOT been checked for at least last six months.  ";
+            }
+
+            reportText += "\n";
+            reportText += "\n";
+
+            reportText += "The patient has experienced ";
+            reportText += weightChange;
+            reportText += ".  ";
+
+            reportText += "The patient reports ";
+            reportText += skipMeals;
+            reportText += " meals.  ";
+
+            reportText += "The patient reports consuming caffeinated beverages ";
+            reportText += sodaFrequency;
+            reportText += ", ";
+            reportText += "consuming chocolate ";
+            reportText += chocolateFrequency;
+            reportText += ", ";
+            reportText += "and consuming smoked meats ";
+            reportText += smokedMeatsFrequency;
+            reportText += ".  ";
+
+            if (vitaminsSteroids[0] == "~") {
+                reportText += "The patient has not recently taken either Vitamin A or steroids.  ";
+            }
+            else {
+                reportText += "The patient has recently taken ";
+                reportText += stringBeautify(vitaminsSteroids);
+                reportText += ".  ";
+            }
+
+
+            reportText += "\n";
+            reportText += "\n";
+
+
+            var strEffective = ", which was effective.  ";
+            var strIneffective = ", which was NOT effective.  ";
+            var strIndent = "* ";
+
+            if (headacheMedication == "no") {
+                reportText += "The patient reports not having taken any medication for headaches.  ";
+            }
+            else {
+                reportText += "The patient reports having taken: ";
+                reportText += "\n";
+
+                if (propranolol == "yes") {
+                    reportText += strIndent;
+                    reportText += "Propranolol";
+                    if (propranololEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (periactin == "yes") {
+                    reportText += strIndent;
+                    reportText += "Periactin";
+                    if (periactinEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (elavil == "yes") {
+                    reportText += strIndent;
+                    reportText += "Elavil";
+                    if (elavilEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (topamax == "yes") {
+                    reportText += strIndent;
+                    reportText += "Topamax";
+                    if (topamaxEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (depakote == "yes") {
+                    reportText += strIndent;
+                    reportText += "Depakote";
+                    if (depakoteEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (tylenol == "yes") {
+                    reportText += strIndent;
+                    reportText += "Tylenol";
+                    if (tylenolEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (motrinIbuprofen == "yes") {
+                    reportText += strIndent;
+                    reportText += "Motrin/Ibuprofen";
+                    if (motrinIbuprofenEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (aleveNaproxen == "yes") {
+                    reportText += strIndent;
+                    reportText += "Aleve/Naproxen";
+                    if (aleveNaproxenEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (midrin == "yes") {
+                    reportText += strIndent;
+                    reportText += "Midrin";
+                    if (midrinEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (fioricet == "yes") {
+                    reportText += strIndent;
+                    reportText += "Fioricet";
+                    if (fioricetEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (zomig == "yes") {
+                    reportText += strIndent;
+                    reportText += "Zomig";
+                    if (zomigEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (imitrex == "yes") {
+                    reportText += strIndent;
+                    reportText += "Imitrex";
+                    if (imitrexEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (relpax == "yes") {
+                    reportText += strIndent;
+                    reportText += "Relpax";
+                    if (relpaxEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (bcPowder == "yes") {
+                    reportText += strIndent;
+                    reportText += "BC Powder";
+                    if (bcPowderEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (ergocaff == "yes") {
+                    reportText += strIndent;
+                    reportText += "Ergocaff";
+                    if (ergocaffEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (migranal == "yes") {
+                    reportText += strIndent;
+                    reportText += "Migranal";
+                    if (migranalEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (excedrinMigraine == "yes") {
+                    reportText += strIndent;
+                    reportText += "Excedrin Migraine";
+                    if (excedrinMigraineEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if (otherHeadacheMedication == "yes") {
+                    reportText += strIndent;
+                    reportText += "Other Headache Medication";
+                    if (otherHeadacheMedicationEffective == "yes") {
+                        reportText += strEffective;
+                        reportText += "\n";
+                    }
+                    else {
+                        reportText += strIneffective;
+                        reportText += "\n";
+                    }
+                }
+
+                if ((otherHeadacheMedication == "no") &&
+                    (excedrinMigraine == "no") &&
+                    (migranal == "no") &&
+                    (ergocaff == "no") &&
+                    (bcPowder == "no") &&
+                    (relpax == "no") &&
+                    (imitrex == "no") &&
+                    (zomig == "no") &&
+                    (fioricet == "no") &&
+                    (midrin == "no") &&
+                    (aleveNaproxen == "no") &&
+                    (motrinIbuprofen == "no") &&
+                    (tylenol == "no") &&
+                    (depakote == "no") &&
+                    (topamax == "no") &&
+                    (elavil == "no") &&
+                    (periactin == "no") &&
+                    (propranolol == "no")) {
+                    reportText += strIndent;
+                    reportText += "Other Headache Medication(s), but has not reported anything about the effectiveness of those medications.  ";
+                }
+
+            }
+
+
+            reportText += "\n";
+            reportText += "\n";
+            reportText += "Information provided by: " + completedByRelationship + "\n";
+            reportText += "Information provided on: " + createdAt + "\n";
+
+
+            displayGrid += "<input type='button' id='btnCopy_" + primaryKey + "' onclick='copyToClipboard(\"" + primaryKey + "\")' value='SELECT ALL Chart Number: " + chartNumber + "'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+
+            displayGrid += "<input type='button' id='btnDelete_" + primaryKey + "' onclick='trashChart(\"" + primaryKey + "\")' value='DELETE Chart Number: " + chartNumber + "'/><BR><BR>";
+
+            displayGrid += "<textarea readonly id='ta_" + primaryKey + "'>" + reportText + "</textarea><br><br><br><br>";
+
+            $("#displayGrid").html(displayGrid);
+
+        });
+
+        function stringBeautify2(str) {
+            //str = str.replace(/,/g, ", ");
+            numberOfCommas = (str.split(",").length - 1);
+            //lert(numberOfCommas);
+            if (numberOfCommas > 1) {
+                var lastComma = str.lastIndexOf(',');
+                var newStr = str.substring(0, lastComma) + '' + str.substring(lastComma + 1);
+                lastComma = newStr.lastIndexOf(',');
+                newStr = newStr.substring(0, lastComma) + ' and' + newStr.substring(lastComma + 1);
+                newStr = newStr.replace(/\s+$/, '');// strip trailing space
+                return newStr;
+            }
+            else if (numberOfCommas == 1){
+                var lastComma = str.lastIndexOf(',');
+                var newStr = str.substring(0, lastComma) + '' + str.substring(lastComma + 1);
+                lastComma = newStr.lastIndexOf(',');
+                newStr = newStr.substring(0, lastComma) + '' + newStr.substring(lastComma + 1);
+                newStr = newStr.replace(/\s+$/, '');// strip trailing space
+                return newStr;
+            }
+            else if (numberOfCommas == 0){
+                return "NONE were indicated"
+            }
+        }
+
+        function stringBeautify(arr) {
+            var a = arr.length;
+            var str = arr.toString();
+            if (a == 0) {
+                return "NONE";
+            }
+            else if (a == 1) {
+                return arr
+            }
+            else if (a == 2) {
+                //arr = arr.toString;
+                str = str.replace(/,/g, " and ");
+                return str;
+            }
+            else {
+                str = str.replace(/,/g, ", ");
+                var lastComma = str.lastIndexOf(',');
+                var newStr = str.substring(0, lastComma) + ' and' + str.substring(lastComma + 1);
+                return newStr;
+            }
+        }
+
+        function trashChart(primaryKey) {
+            var updates = {};
+            updates[primaryKey + '/trashed/'] = true;
+            xxxRef.update(updates);
+            //removeElement(primaryKey);
+            //startUp();
+            location.reload(true);
+        }
+
+        function copyToClipboard(primaryKey) {
+            var textareaID = "ta_" + primaryKey;
+            var copyText = document.getElementById(textareaID);
+            copyText.select();
+            document.execCommand("Copy");
+        }
+
+            // Good sample.  Works, but don't need it.
+            // 
+    /*         function removeElement(primaryKey) {
+                var btnCopyID = "btnCopy_" + primaryKey;
+                var btnDeleteID = "btnDelete_" + primaryKey;
+                var taID = "ta_" + primaryKey;
+                $("#" + btnCopyID).remove();
+                $("#" + btnDeleteID).remove();
+                $("#" + taID).remove();
+            }
+     */
+
+    </script>
+</body>
+
+</html>

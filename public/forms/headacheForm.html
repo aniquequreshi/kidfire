@@ -1,0 +1,2404 @@
+<html>
+
+<head>
+    <title>
+        Headache Form
+    </title>
+    <style>
+        body {
+            background-color: lightsteelblue;
+        }
+
+        .yesHeadacheLocation {
+            display: none;
+        }
+
+        .yesVisionChecked {
+            display: none;
+        }
+
+        .gottenWorse {
+            display: none;
+        }
+
+        .yesGlassesPrescribed {
+            display: none;
+        }
+
+        .yesSnoringHx {
+            display: none;
+        }
+
+        .yesAgeSeven {
+            display: none;
+        }
+
+        .yesAgeThirteen {
+            display: none;
+        }
+
+        .yesPropranolol {
+            display: none;
+        }
+
+        .yesPeriactin {
+            display: none;
+        }
+
+        .yesElavil {
+            display: none;
+        }
+
+        .yesTopamax {
+            display: none;
+        }
+
+        .yesDepakote {
+            display: none;
+        }
+
+        .yesTylenol {
+            display: none;
+        }
+
+        .yesMotrinIbuprofen {
+            display: none;
+        }
+
+        .yesAleveNaproxen {
+            display: none;
+        }
+
+        .yesMidrin {
+            display: none;
+        }
+
+        .yesFioricet {
+            display: none;
+        }
+
+        .yesZomig {
+            display: none;
+        }
+
+        .yesImitrex {
+            display: none;
+        }
+
+        .yesRelpax {
+            display: none;
+        }
+
+        .yesBcPowder {
+            display: none;
+        }
+
+        .yesErgocaff {
+            display: none;
+        }
+
+        .yesMigranal {
+            display: none;
+        }
+
+        .yesExcedrinMigraine {
+            display: none;
+        }
+
+        .yesOtherHeadacheMedication {
+            display: none;
+        }
+
+        .allMedications {
+            display: none;
+        }
+
+        #associated td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+
+</head>
+
+<body>
+    <a href="/">Home</a>
+    <br/>
+    <div style="margin:0 auto;width:75%;text-align:left">
+        <h1>Headache Questionnaire</h1>
+        <form id="headacheForm" autocomplete="off">
+
+            <h4>User ID (provided to you by Front Desk staff):
+                <input type="number" required name="chartNumber" id="chartNumber" />
+            </h4>
+
+            <h4>What is your relationship to the patient?</h4>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="mother" value="mother" />Mother</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="father" value="father" />Father</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="grandmother" value="grandmother" />Grandmother</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="grandfather" value="grandfather" />Grandfather</label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="aunt" value="aunt" />Aunt</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="uncle" value="uncle" />Uncle</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="social worker" value="social worker" />Social Worker</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="guardian" value="guardian" />Guardian</label>
+            <label>
+                <input type="radio" required name="completedByRelationship" id="other" value="other" />Other</label>
+
+            <hr/>
+
+            <h4>How long has the patient had headaches? </h4>
+            <label>
+                <input type="radio" required name="duration" value="1 day" />1 day
+            </label>
+            <label>
+                <input type="radio" required name="duration" value="2 days" />2 days
+            </label>
+            <label>
+                <input type="radio" required name="duration" value="3 days" />3 days
+            </label>
+            <label>
+                <input type="radio" required name="duration" value="4 days" />4 days
+            </label>
+            <label>
+                <input type="radio" required name="duration" value="5 days" />5 days
+            </label>
+            <label>
+                <input type="radio" required name="duration" value="6 days" />6 days
+            </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="duration" value="1 week" />1 week
+            </label>
+            <label>
+                <input type="radio" required name="duration" value="2 weeks" />2 weeks
+            </label>
+            <label>
+                <input type="radio" required name="duration" value="3 weeks" />3 weeks
+            </label>
+            <label>
+                <input type="radio" required name="duration" value="1 month" />1 month
+            </label>
+            <br />
+            <br />
+            <label>
+                <input type="radio" required name="duration" value="less than 6 months" />Less than 6 months
+            </label>
+            <label>
+                <input type="radio" required name="duration" value="more than 6 months, but less than a year" />More than 6 months, but less than 1 year
+            </label>
+            <br />
+            <br />
+            <label>
+                <input type="radio" required name="duration" value="a few years" />A few years
+            </label>
+            <label>
+                <input type="radio" required name="duration" value="several years" />Several years
+            </label>
+
+            <h4>How many different kinds of headaches does the patient have?
+                <br/> Do all headaches have the same level of severity, affect the same
+                <br/> area of the head, and cause similar symptoms?</h4>
+
+            <label>
+                <input type="radio" required name="kind" value="one kind" />One kind
+            </label>
+            <label>
+                <input type="radio" required name="kind" value="two different kinds" />Two different kinds
+            </label>
+            <label>
+                <input type="radio" required name="kind" value="many different kinds" />Many different kinds
+            </label>
+
+            <h4>Where is the headache located?</h4>
+            <label>
+                <input type="checkbox" class="located" id="generalizedLocated" value="generalized" />All over
+            </label>
+            <label>
+                <input type="checkbox" class="located" id="frontalLocated" value="frontal" />Forehead
+            </label>
+            <label>
+                <input type="checkbox" class="located" id="temporalLocated" value="temporal" />Temples
+            </label>
+            <label>
+                <input type="checkbox" class="located" id="neckLocated" value="neck" />Neck
+            </label>
+            <label>
+                <input type="checkbox" class="located" id="orbitalLocated" value="orbital" />Behind the eyes
+            </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="located" id="parietalLocated" value="parietal" />Top of the head
+            </label>
+            <label>
+                <input type="checkbox" class="located" id="occipitalLocated" value="occipital" />Back of the head
+            </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="checkbox" class="located" id="rightHemicranialLocated" value="right hemicranial" />Right side of the head
+            </label>
+            <label>
+                <input type="checkbox" class="located" id="leftHemicranialLocated" value="left hemicranial" />Left side of the head
+            </label>
+
+
+            <h4>
+                Over time, the headache has:
+            </h4>
+            <label>
+                <input type="radio" required name="progression" value="gotten better" />Gotten better
+            </label>
+            <label>
+                <input type="radio" required name="progression" value="remained the same" />Remained the same
+            </label>
+            <label>
+                <input type="radio" required name="progression" value="gotten worse" />Gotten worse
+            </label>
+            <div class="gottenWorse">
+                <br/>
+                <fieldset>
+                    <h4>
+                        Has it:
+                    </h4>
+                    <label>
+                        <input type="radio" required name="gottenWorse" disabled="true" value="increased in severity" />Increased in severity
+                    </label>
+                    <label>
+                        <input type="radio" required name="gottenWorse" disabled="true" value="increased in frequency" />Increased in frequency
+                    </label>
+                    <label>
+                        <input type="radio" required name="gottenWorse" disabled="true" value="increased in severity and frequency" />Increased in severity and frequency
+                    </label>
+                    <h4>
+                        Since when did it get worse?
+                    </h4>
+                    <label>
+                        <input type="radio" required name="sinceWhen" disabled="true" value="1 day" />1 day
+                    </label>
+                    <label>
+                        <input type="radio" required name="sinceWhen" disabled="true" value="2 days" />2 days
+                    </label>
+                    <label>
+                        <input type="radio" required name="sinceWhen" disabled="true" value="3 days" />3 days
+                    </label>
+                    <label>
+                        <input type="radio" required name="sinceWhen" disabled="true" value="4 days" />4 days
+                    </label>
+                    <label>
+                        <input type="radio" required name="sinceWhen" disabled="true" value="5 days" />5 days
+                    </label>
+                    <label>
+                        <input type="radio" required name="sinceWhen" disabled="true" value="6 days" />6 days
+                    </label>
+                    <br/>
+                    <br/>
+                    <label>
+                        <input type="radio" required name="sinceWhen" disabled="true" value="1 week" />1 week
+                    </label>
+                    <label>
+                        <input type="radio" required name="sinceWhen" disabled="true" value="2 weeks" />2 weeks
+                    </label>
+                    <label>
+                        <input type="radio" required name="sinceWhen" disabled="true" value="3 weeks" />3 weeks
+                    </label>
+                    <label>
+                        <input type="radio" required name="sinceWhen" disabled="true" value="1 month" />1 month
+                    </label>
+                    <br />
+                    <br />
+                    <label>
+                        <input type="radio" required name="sinceWhen" disabled="true" value="less than 6 months" />Less than 6 months
+                    </label>
+                    <label>
+                        <input type="radio" required name="sinceWhen" disabled="true" value="more than 6 months, but less than a year" />More than 6 months, but less than 1 year
+                    </label>
+                    <label>
+                        <input type="radio" required name="sinceWhen" disabled="true" value="a few years" />A few years
+                    </label>
+                </fieldset>
+            </div>
+            <h4>
+                Headache worsens with: (select all that apply)
+            </h4>
+            <label>
+                <input type="checkbox" class="worsensWith" value="activity" />Activity
+            </label>
+            <label>
+                <input type="checkbox" class="worsensWith" value="standing" />Standing
+            </label>
+            <label>
+                <input type="checkbox" class="worsensWith" value="lying" />Lying
+            </label>
+            <h4>
+                How severe are the patient's headaches?
+            </h4>
+            <label>
+                <input type="radio" required name="severity" value="mild" />Mild
+            </label>
+            <label>
+                <input type="radio" required name="severity" value="moderate" />Moderate
+            </label>
+            <label>
+                <input type="radio" required name="severity" value="severe" />Severe
+            </label>
+            <label>
+                <input type="radio" required name="severity" value="very severe" /> Very severe
+            </label>
+            <br/>
+            <br/>
+            <fieldset>
+                <h4>
+                    On a scale of 1 to 10, rate the patient's headache:
+                </h4>
+
+                <b>Mild</b>
+                <label>
+                    <input type="radio" required name="severityScale" value="1" />1
+                </label>
+                <label>
+                    <input type="radio" required name="severityScale" value="2" />2
+                </label>
+                <label>
+                    <input type="radio" required name="severityScale" value="3" />3
+                </label>
+                <label>
+                    <input type="radio" required name="severityScale" value="4" />4
+                </label>
+                <label>
+                    <input type="radio" required name="severityScale" value="5" />5
+                </label>
+                <label>
+                    <input type="radio" required name="severityScale" value="6" />6
+                </label>
+                <label>
+                    <input type="radio" required name="severityScale" value="7" />7
+                </label>
+                <label>
+                    <input type="radio" required name="severityScale" value="8" />8
+                </label>
+                <label>
+                    <input type="radio" required name="severityScale" value="9" />9
+                </label>
+                <label>
+                    <input type="radio" required name="severityScale" value="10" />10
+                </label>
+                <b>Very Severe</b>
+            </fieldset>
+            <h4>
+                What does the headache feel like?
+            </h4>
+            <label>
+                <input type="radio" required name="nature" value="throbbing" />Throbbing
+            </label>
+            <label>
+                <input type="radio" required name="nature" value="crushing" />Crushing
+            </label>
+            <label>
+                <input type="radio" required name="nature" value="band-like" />Band like
+            </label>
+            <label>
+                <input type="radio" required name="nature" value="stabbing" />Stabbing
+            </label>
+            <h4>Is the headache?</h4>
+            <label>
+                <input type="radio" required name="quality" value="sharp" />Sharp
+            </label>
+            <label>
+                <input type="radio" required name="quality" value="dull" />Dull
+            </label>
+            <h4>
+                How frequent are the headaches?
+            </h4>
+            <label>
+                <input type="radio" required name="frequency" value="only once" />Only once
+            </label>
+            <label>
+                <input type="radio" required name="frequency" value="several times a day" />Several times a day
+            </label>
+            <label>
+                <input type="radio" required name="frequency" value="once a day" /> Once a day
+            </label>
+            <label>
+                <input type="radio" required name="frequency" value="every other day" />Every other day
+            </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="frequency" value="two to three times a week" />Two to three times a week
+            </label>
+            <label>
+                <input type="radio" required name="frequency" value="once a week" />Once a week
+            </label>
+            <label>
+                <input type="radio" required name="frequency" value="a few times a month" />A few times a month
+            </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="frequency" value="once a month" />Once a month
+            </label>
+            <label>
+                <input type="radio" required name="frequency" value="a few times a year" />A few times a year
+            </label>
+            <label>
+                <input type="radio" required name="frequency" value="about once a year" />About once a year
+            </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="frequency" value="cluster of a few days" />Cluster of a few days
+            </label>
+            <label>
+                <input type="radio" required name="frequency" value="cluster of a few weeks" />Cluster of a few weeks
+            </label>
+            <h4>
+                What time of the day do the headaches usually occur? (select all that apply)
+            </h4>
+            <label>
+                <input type="checkbox" class="timing" value="upon awakening" />Upon awakening
+            </label>
+            <label>
+                <input type="checkbox" class="timing" value="in the morning" />In the morning
+            </label>
+            <label>
+                <input type="checkbox" class="timing" value="in the afternoon" />In the afternoon
+            </label>
+            <label>
+                <input type="checkbox" class="timing" value="at nighttime" />At nighttime
+            </label>
+            <h4>
+                Does the headache wake the patient up from sleep?
+            </h4>
+            <label>
+                <input type="radio" required name="wakeUpFromSleep" value="yes" />Yes
+            </label>
+
+            <label>
+                <input type="radio" required name="wakeUpFromSleep" value="no" />No
+            </label>
+            <h4>
+                Does the patient have vomitting upon awakening?
+            </h4>
+            <label>
+                <input type="radio" required name="vomiting" value="yes" />Yes
+            </label>
+
+            <label>
+                <input type="radio" required name="vomiting" value="no" />No
+            </label>
+            <h4>
+                Does the patient have "warning signs" (an aura) associated with the headache?
+            </h4>
+            <label>
+                <input type="radio" required name="aura" value="yes" />Yes
+            </label>
+
+            <label>
+                <input type="radio" required name="aura" value="no" />No
+            </label>
+            <h4>
+                What does the patient do when a headache occurs? (select all that apply)
+            </h4>
+            <label>
+                <input type="checkbox" class="treatement" value="lies down" />Lies down
+            </label>
+            <label>
+                <input type="checkbox" class="treatement" value="makes room dark and quiet" />Makes the room dark and quiet
+            </label>
+            <br/>
+            <br />
+            <label>
+                <input type="checkbox" class="treatement" value="covers eyes" />Covers eyes
+            </label>
+            <label>
+                <input type="checkbox" class="treatement" value="takes pain-killers such as Motrin or Tylenol" /> Takes pain-killers such as Motrin or Tylenol
+            </label>
+
+            <h4>How frequently does the patient take pain-killers like Aspirin, Tylenol, or Motrin?</h4>
+            <label>
+                <input type="radio" required name="painKillers" value="taken several times a day"> taken several times a day </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="painKillers" value="taken once a day"> taken once a day </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="painKillers" value="taken two to three times a week"> taken two to three times a week </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="painKillers" value="taken once a week or less"> taken once a week or less </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="painKillers" value="never taken"> never taken </label>
+            <br/>
+            <br/>
+            <h4>Does sleeping resolve the headache?</h4>
+            <label>
+                <input type="radio" required name="sleepingResolves" value="resolves"> yes </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="sleepingResolves" value="does not resolve"> no </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="sleepingResolves" value="sometimes resolves"> sometimes </label>
+
+            <br/>
+            <h4>Does the patient look ill during headaches?</h4>
+            <label>
+                <input type="radio" required name="looksIll" value="looks"> yes </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="looksIll" value="does not look"> no </label>&nbsp;&nbsp;&nbsp;
+
+            <label>
+                <input type="radio" required name="looksIll" value="sometimes looks"> sometimes </label>
+            <br/>
+
+            <h4>Does the patient have loss of appetite during headaches?</h4>
+            <label>
+                <input type="radio" required name="appetiteLoss" value="cause"> yes </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="appetiteLoss" value="do not cause"> no </label>&nbsp;&nbsp;&nbsp;
+
+            <label>
+                <input type="radio" required name="appetiteLoss" value="sometimes cause"> sometimes </label>
+            <br/>
+
+            <h4>Does the patient have a history of allergies?</h4>
+            <label>
+                <input type="radio" required name="allergiesHx" value="has"> yes </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="allergiesHx" value="does not have"> no </label>&nbsp;&nbsp;&nbsp;
+            <br/>
+
+            <h4>Does the patient usually skip meals?</h4>
+            <label>
+                <input type="radio" required name="skipMeals" value="skipping"> yes </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="skipMeals" value="not skipping"> no </label>&nbsp;&nbsp;&nbsp;
+
+            <label>
+                <input type="radio" required name="skipMeals" value="sometimes skipping"> sometimes </label>
+            <br/>
+
+            <h4> Has the vision been checked in the last six months?</h4>
+            <label>
+                <input type="radio" required name="visionChecked" value="yes"> yes </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="visionChecked" value="no"> no </label>&nbsp;&nbsp;&nbsp;
+            <br/>
+
+            <div class="yesVisionChecked">
+                <br/>
+                <fieldset>
+                    <h4>Were glasses/contact lenses prescribed?</h4>
+                    <label>
+                        <input type="radio" required name="glassesPrescribed" disabled="true" value="yes"> yes </label>&nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="glassesPrescribed" disabled="true" value="no"> no </label>&nbsp;&nbsp;&nbsp;
+
+                </fieldset>
+            </div>
+
+            <div class="yesGlassesPrescribed">
+                <fieldset>
+                    <h4>Is the patient wearing glasses or contact lenses regularly?</h4>
+                    <label>
+                        <input type="radio" required name="wearsGlasses" disabled="true" value="yes"> yes </label>&nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="wearsGlasses" disabled="true" value="no"> no </label>&nbsp;&nbsp;&nbsp;
+                    <br/>
+                </fieldset>
+            </div>
+
+            <h4>Does the patient have a history of snoring?</h4>
+            <label>
+                <input type="radio" required name="snoringHx" value="yes"> yes </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="snoringHx" value="no"> no </label>&nbsp;&nbsp;&nbsp;
+            <br/>
+            <br/>
+            <div class="yesSnoringHx">
+                <fieldset>
+                    <h4>Does the patient wake up due to difficulty in breathing?</h4>
+                    <label>
+                        <input type="radio" required name="snoringWakeUp" disabled="true" value="yes"> yes </label>&nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="snoringWakeUp" disabled="true" value="no"> no </label>&nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="snoringWakeUp" disabled="true" value="sometimes"> sometimes </label>
+
+                    <br/>
+                </fieldset>
+            </div>
+
+
+
+            <h4> How frequently does the patient consume caffeinated beverages like soft drinks, energy drinks, chocolate milk,
+                coffee, or tea?</h4>
+            <label>
+                <input type="radio" required name="sodaFrequency" value="every day"> every day </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="sodaFrequency" value="few times a week"> few times a week </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="sodaFrequency" value="about once a week"> about once a week </label>
+            <label>
+                <input type="radio" required name="sodaFrequency" value="occasionally"> occasionally </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="sodaFrequency" value="never"> never </label>
+
+            <h4> How frequently does the patient consume chocolate?</h4>
+            <label>
+                <input type="radio" required name="chocolateFrequency" value="every day"> every day </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="chocolateFrequency" value="few times a week"> few times a week </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="chocolateFrequency" value="about once a week"> about once a week </label>
+            <label>
+                <input type="radio" required name="chocolateFrequency" value="occasionally"> occasionally </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="chocolateFrequency" value="never"> never </label>
+
+            <h4> How frequently does the patient consume smoked meats?</h4>
+            <label>
+                <input type="radio" required name="smokedMeatsFrequency" value="every day"> every day </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="smokedMeatsFrequency" value="few times a week"> few times a week </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="smokedMeatsFrequency" value="about once a week"> about once a week </label>
+            <label>
+                <input type="radio" required name="smokedMeatsFrequency" value="occasionally"> occasionally </label>&nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="smokedMeatsFrequency" value="never"> never </label>
+
+
+            <br/>
+            <br/>
+
+            <h4>Has the patient missed school due to headaches?</h4>
+            <label>
+                <input type="radio" required name="missedSchool" value="never"> never missed school due to headache </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="missedSchool" value="few days"> missed a few days of school </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="missedSchool" value="few weeks"> missed a few weeks of school </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="missedSchool" value="homebound"> patient is homebound due to headaches </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="missedSchool" value="preSchool"> patient is pre-school age </label>
+
+            <br/>
+            <br/>
+            <h4>Has the patient's performance in school declined?</h4>
+            <label>
+                <input type="radio" required name="schoolPerformance" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="schoolPerformance" value="no"> no </label>
+            <br/>
+            <br/>
+
+            <h4>Patient has recently taken: (select all that apply)</h4>
+            <label>
+                <input type="checkbox" class="vitaminsSteroids" value="Vitamin A"> Vitamin A </label> &nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="checkbox" class="vitaminsSteroids" value="steroids"> Steroids </label> &nbsp;&nbsp;&nbsp;
+            <br/>
+            <br/>
+
+            <h4>Has the patient suffered from a head trauma?</h4>
+            <label>
+                <input type="radio" required name="trauma" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="trauma" value="no"> no </label>
+            <br/>
+            <br/>
+            <h4>Has the patient recently travelled outside the country?</h4>
+            <label>
+                <input type="radio" required name="travelled" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="travelled" value="no"> no </label>
+            <br/>
+            <br/>
+
+            <h4> Does the patient have history of sinus infections?</h4>
+            <label>
+                <input type="radio" required name="sinus" value="yes"> yes </label>
+            &nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="sinus" value="no"> no </label>
+            <br/>
+            <br/>
+            <h4>Does the patient have trouble falling asleep?</h4>
+            <label>
+                <input type="radio" required name="fallingAsleep" value="yes"> yes </label>
+            &nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="fallingAsleep" value="no"> no </label>
+            <br/>
+            <br/>
+            <h4> Does the patient have trouble maintaining sleep?</h4>
+            <label>
+                <input type="radio" required name="maintainingSleep" value="yes"> yes </label>
+            &nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="maintainingSleep" value="no"> no </label>
+            <br/>
+            <br/>
+
+            <h4>Is the patient age seven or older?</h4>
+            <label>
+                <input type="radio" required name="ageSeven" value="yes"> yes </label>
+            &nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="ageSeven" value="no"> no </label>
+
+            <div class="yesAgeSeven">
+                <br/>
+                <fieldset>
+                    <h4> Does the patient have history of depression?</h4>
+                    <label>
+                        <input type="radio" required name="depression" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="depression" disabled="true" value="no"> no </label>
+                </fieldset>
+
+
+                <h4>Is the patient age thirteen or older?</h4>
+                <label>
+                    <input type="radio" required name="ageThirteen" disabled="true" value="yes"> yes </label>
+                &nbsp;&nbsp;&nbsp;
+                <label>
+                    <input type="radio" required name="ageThirteen" disabled="true" value="no"> no </label>
+
+                <div class="yesAgeThirteen">
+                    <br/>
+                    <fieldset>
+                        <h4>Does the patient have history of illicit drug use?</h4>
+                        <label>
+                            <input type="radio" required name="drugAbuse" disabled="true" value="yes"> yes </label>
+                        &nbsp;&nbsp;&nbsp;
+                        <label>
+                            <input type="radio" required name="drugAbuse" disabled="true" value="no"> no </label>
+
+                        <br/>
+
+                        <h4>Does the patient have history of diffused body aches and pains?</h4>
+                        <label>
+                            <input type="radio" required name="diffusedBodyAchesPain" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                        <label>
+                            <input type="radio" required name="diffusedBodyAchesPain" disabled="true" value="no"> no </label>
+                    </fieldset>
+                </div>
+            </div>
+
+            <br />
+            <h4>Does the patient have a history of thyroid problems?</h4>
+            <label>
+                <input type="radio" required name="thyroid" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="thyroid" value="no"> no </label>
+            <br />
+            <br />
+            <h4>Has there been a change in the patient's weight?</h4>
+            <label>
+                <input type="radio" required name="weightChange" value="no change in weight"> No change in weight </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="weightChange" value="weight gain"> Weight Gain </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="weightChange" value="weight loss (due to dieting)"> Weight Loss (Due to Dieting) </label>
+            <br/>
+            <br/>
+            <label>
+                <input type="radio" required name="weightChange" value="weight loss (NOT due to dieting)"> Weight Loss (NOT Due to Dieting) </label>
+            <br/>
+            <br/>
+            <h4>Does the patient have the following symptoms associated with headache?</h4>
+            <table id="associated">
+                <tr>
+                    <td>Blurred Vision</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="blurredVision" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="blurredVision" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Double Vision</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="doubleVision" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="doubleVision" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Poor Balance</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="poorBalance" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="poorBalance" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Difficulty in Swallowing</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="swallowingDifficulty" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="swallowingDifficulty" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Eye Shaking/Nystagmus</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="nystagmus" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="nystagmus" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Changes in Speech</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="speechChanges" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="speechChanges" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nausea</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="nausea" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="nausea" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vomiting</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="vomitingWithHeadache" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="vomitingWithHeadache" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Light Sensitivity</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="lightSensitivity" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="lightSensitivity" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sound Sensitivity</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="soundSensitivity" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="soundSensitivity" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dizziness</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="dizziness" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="dizziness" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vertigo</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="vertigo" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="vertigo" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fever</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="fever" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="fever" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Weakness on One Side</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="weaknessOneSide" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="weaknessOneSide" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Numbness/Tingling</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="numbnessTingling" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="numbnessTingling" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Neck Pain</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="neckPain" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="neckPain" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Staring Spells (frequent glazed look)</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="staringSpells" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="staringSpells" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Seizures or Convulsions</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="seizuresConvulsions" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="seizuresConvulsions" value="no"> no </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Confusion or Disorientation</td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="confusionDisorientation" value="yes"> yes </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" required name="confusionDisorientation" value="no"> no </label>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <br/>
+
+            <hr/>
+
+            <h4>Has the patient ever taken headache medication?</h4>
+            <label>
+                <input type="radio" required name="headacheMedication" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+            <label>
+                <input type="radio" required name="headacheMedication" value="no"> no </label>
+            <br/>
+            <br/>
+            <div class="allMedications">
+                <br/>
+                <fieldset>
+                    <h4>Has the patient taken Propranolol?</h4>
+                    <label>
+                        <input type="radio" required name="propranolol" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="propranolol" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesPropranolol">
+                        <br/>
+                        <fieldset>
+
+                            <h4>Was Propranolol effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="propranololEffective" disabled="true" value="yes"> yes
+                            </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="propranololEffective" disabled="true" value="no"> no
+                            </label>
+                            <br/>
+                            <br/>
+                        </fieldset>
+                    </div>
+                    <h4>Has the patient taken Periactin/Cyproheptadine ?</h4>
+                    <label>
+                        <input type="radio" required name="periactin" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="periactin" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesPeriactin">
+                        <br/>
+                        <fieldset>
+
+                            <h4>Was Periactin/Cyproheptadine effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="periactinEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="periactinEffective" disabled="true" value="no"> no </label>
+                            <br/>
+                            <br/> </fieldset>
+                    </div>
+                    <h4>Has the patient taken Elavil/Amitriptyline?</h4>
+                    <label>
+                        <input type="radio" required name="elavil" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="elavil" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesElavil">
+                        <br/>
+                        <fieldset>
+
+                            <h4>Was Elavil/Amitriptyline effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="elavilEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="elavilEffective" disabled="true" value="no"> no </label>
+                            <br/>
+                            <br/>
+                        </fieldset>
+                    </div>
+                    <h4>Has the patient taken Topamax?</h4>
+                    <label>
+                        <input type="radio" required name="topamax" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="topamax" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesTopamax">
+                        <br/>
+                        <fieldset>
+
+                            <h4>Was Topamax effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="topamaxEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="topamaxEffective" disabled="true" value="no"> no </label>
+                            <br/>
+                            <br/>
+                        </fieldset>
+                    </div>
+                    <h4>Has the patient taken Depakote?</h4>
+                    <label>
+                        <input type="radio" required name="depakote" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="depakote" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesDepakote">
+                        <br/>
+                        <fieldset>
+                            <h4>Was Depakote effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="depakoteEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="depakoteEffective" disabled="true" value="no"> no </label>
+                            <br/>
+                            <br/>
+                        </fieldset>
+                    </div>
+                    <h4>Has the patient taken Tylenol?</h4>
+                    <label>
+                        <input type="radio" required name="tylenol" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="tylenol" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesTylenol">
+                        <br/>
+                        <fieldset>
+
+                            <h4>Was Tylenol effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="tylenolEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="tylenolEffective" disabled="true" value="no"> no </label>
+                            <br/>
+                            <br/>
+                        </fieldset>
+                    </div>
+                    <h4>Has the patient taken Motrin/Ibuprofen?</h4>
+                    <label>
+                        <input type="radio" required name="motrinIbuprofen" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="motrinIbuprofen" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesMotrinIbuprofen">
+                        <br/>
+                        <fieldset>
+                            <h4>Was Motrin/Ibuprofen effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="motrinIbuprofenEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="motrinIbuprofenEffective" disabled="true" value="no"> no </label>
+                            <br/>
+                            <br/> </fieldset>
+                    </div>
+                    <h4>Has the patient taken Aleve/Naproxen?</h4>
+                    <label>
+                        <input type="radio" required name="aleveNaproxen" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="aleveNaproxen" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesAleveNaproxen">
+                        <br/>
+                        <fieldset>
+                            <h4>Was Aleve/Naproxen effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="aleveNaproxenEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="aleveNaproxenEffective" disabled="true" value="no"> no </label>
+                            <br/>
+                            <br/> </fieldset>
+                    </div>
+                    <h4>Has the patient taken Midrin?</h4>
+                    <label>
+                        <input type="radio" required name="midrin" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="midrin" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesMidrin">
+                        <br/>
+                        <fieldset>
+                            <h4>Was Midrin effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="midrinEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="midrinEffective" disabled="true" value="no"> no </label>
+                            <br/>
+                            <br/>
+                        </fieldset>
+                    </div>
+                    <h4>Has the patient taken Fioricet/Butalbital APAP Caffeine?</h4>
+                    <label>
+                        <input type="radio" required name="fioricet" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="fioricet" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesFioricet">
+                        <br/>
+                        <fieldset>
+                            <h4>Was Fioricet/Butalbital APAP Caffeine effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="fioricetEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="fioricetEffective" disabled="true" value="no"> no </label>
+                            <br/>
+                            <br/> </fieldset>
+                    </div>
+                    <h4>Has the patient taken Zomig?</h4>
+                    <label>
+                        <input type="radio" required name="zomig" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="zomig" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesZomig">
+                        <br/>
+                        <fieldset>
+                            <h4>Was Zomig effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="zomigEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="zomigEffective" disabled="true" value="no"> no </label>
+                            <br/>
+                            <br/> </fieldset>
+                    </div>
+                    <h4>Has the patient taken Imitrex?</h4>
+                    <label>
+                        <input type="radio" required name="imitrex" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="imitrex" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesImitrex">
+                        <br/>
+                        <fieldset>
+                            <h4>Was Imitrex effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="imitrexEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="imitrexEffective" disabled="true" value="no"> no </label>
+                            <br/>
+                            <br/>
+                        </fieldset>
+                    </div>
+                    <h4>Has the patient taken Relpax?</h4>
+                    <label>
+                        <input type="radio" required name="relpax" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="relpax" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesRelpax">
+                        <br/>
+                        <fieldset>
+                            <h4>Was Relpax effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="relpaxEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="relpaxEffective" disabled="true" value="no"> no </label>
+                            <br/>
+                            <br/>
+                        </fieldset>
+                    </div>
+                    <h4>Has the patient taken BC Powder ?</h4>
+                    <label>
+                        <input type="radio" required name="bcPowder" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="bcPowder" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesBcPowder">
+                        <br/>
+                        <fieldset>
+                            <h4>Was BC Powder effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="bcPowderEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="bcPowderEffective" disabled="true" value="no"> no </label>
+                            <br/>
+                            <br/> </fieldset>
+                    </div>
+                    <h4>Has the patient taken Ergocaff?</h4>
+                    <label>
+                        <input type="radio" required name="ergocaff" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="ergocaff" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesErgocaff">
+                        <br/>
+                        <fieldset>
+                            <h4>Was Ergocaff effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="ergocaffEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="ergocaffEffective" disabled="true" value="no"> no </label>
+                        </fieldset>
+                    </div>
+
+                    <h4>Has the patient taken Migranal?</h4>
+                    <label>
+                        <input type="radio" required name="migranal" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="migranal" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesMigranal">
+                        <br/>
+                        <fieldset>
+                            <h4>Was Migranal effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="migranalEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="migranalEffective" disabled="true" value="no"> no </label>
+                        </fieldset>
+                    </div>
+
+
+                    <h4>Has the patient taken Excedrin Migraine?</h4>
+                    <label>
+                        <input type="radio" required name="excedrinMigraine" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="excedrinMigraine" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesExcedrinMigraine">
+                        <br/>
+                        <fieldset>
+                            <h4>Was Excedrin Migraine effective at resolving the headache??</h4>
+                            <label>
+                                <input type="radio" required name="excedrinMigraineEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="excedrinMigraineEffective" disabled="true" value="no"> no </label>
+                        </fieldset>
+                    </div>
+
+
+
+                    <h4>Has the patient taken any other medication for headaches?</h4>
+                    <label>
+                        <input type="radio" required name="otherHeadacheMedication" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" required name="otherHeadacheMedication" disabled="true" value="no"> no </label>
+                    <br/>
+                    <br/>
+                    <div class="yesOtherHeadacheMedication">
+                        <br/>
+                        <fieldset>
+                            <h4>Was that medication(s) effective in resolving the headache?</h4>
+                            <label>
+                                <input type="radio" required name="otherHeadacheMedicationEffective" disabled="true" value="yes"> yes </label> &nbsp;&nbsp;&nbsp;
+                            <label>
+                                <input type="radio" required name="otherHeadacheMedicationEffective" disabled="true" value="no"> no </label>
+                        </fieldset>
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <br/>
+            <br/>
+            <br/>
+            <input type="Submit" value="Submit" />
+            <br/>
+            <br/>
+            <br/>
+
+        </form>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBImyqi96ixDENotso6AuW-XYKBZ8i6QzY",
+            authDomain: "kidsneur.firebaseapp.com",
+            databaseURL: "https://kidsneur.firebaseio.com",
+            projectId: "kidsneur",
+            storageBucket: "kidsneur.appspot.com",
+            messagingSenderId: "1025459044469"
+        };
+        firebase.initializeApp(config);
+
+        var xxxRef = firebase.database().ref('headache');
+
+        document.getElementById("headacheForm").addEventListener("submit", submitForm);
+
+        function submitForm(e) {
+            e.preventDefault();
+            var chartNumber = getInputValues("chartNumber");
+            var completedByRelationship = getradioButtonValue('completedByRelationship');
+            var duration = getradioButtonValue('duration');
+            var kind = getradioButtonValue('kind');
+            var located = getCheckboxValues('located');
+            var progression = getradioButtonValue('progression');
+            var gottenWorse, sinceWhen;
+            if (progression == "gotten worse") {
+                gottenWorse = getradioButtonValue('gottenWorse');
+                sinceWhen = getradioButtonValue('sinceWhen');
+            }
+            else {
+                gottenWorse = "";
+                sinceWhen = "";
+            }
+            var worsensWith = getCheckboxValues('worsensWith');
+            var severity = getradioButtonValue('severity');
+            var severityScale = getradioButtonValue('severityScale');
+            var nature = getradioButtonValue('nature');
+            var quality = getradioButtonValue('quality');
+            var frequency = getradioButtonValue('frequency');
+            var timing = getCheckboxValues('timing');
+            var wakeUpFromSleep = getradioButtonValue('wakeUpFromSleep');
+            var vomiting = getradioButtonValue('vomiting');
+            var aura = getradioButtonValue('aura');
+            var treatement = getCheckboxValues('treatement');
+            var painKillers = getradioButtonValue('painKillers');
+            var sleepingResolves = getradioButtonValue('sleepingResolves');
+            var looksIll = getradioButtonValue('looksIll');
+            var appetiteLoss = getradioButtonValue('appetiteLoss');
+            var allergiesHx = getradioButtonValue('allergiesHx');
+            var skipMeals = getradioButtonValue('skipMeals');
+            var visionChecked = getradioButtonValue('visionChecked');
+
+            var glassesPrescribed;
+            var wearsGlasses;
+            if (visionChecked == "yes") {
+                glassesPrescribed = getradioButtonValue('glassesPrescribed');
+                if (glassesPrescribed == "yes") {
+                    wearsGlasses = getradioButtonValue('wearsGlasses');
+                }
+                else {
+                    wearsGlasses = "";
+                }
+            }
+            else {
+                glassesPrescribed = "";
+                wearsGlasses = "";
+            }
+
+            var snoringHx = getradioButtonValue('snoringHx');
+            var snoringWakeUp;
+            if (snoringHx == "yes") {
+                snoringWakeUp = getradioButtonValue('snoringWakeUp');
+            }
+            else {
+                snoringWakeUp = "";
+            }
+
+            var sodaFrequency = getradioButtonValue('sodaFrequency');
+            var chocolateFrequency = getradioButtonValue('chocolateFrequency');
+            var smokedMeatsFrequency = getradioButtonValue('smokedMeatsFrequency');
+            var missedSchool = getradioButtonValue('missedSchool');
+            var vitaminsSteroids = getCheckboxValues('vitaminsSteroids');
+            var sinus = getradioButtonValue('sinus');
+            var fallingAsleep = getradioButtonValue('fallingAsleep');
+            var maintainingSleep = getradioButtonValue('maintainingSleep');
+
+            var ageSeven = getradioButtonValue('ageSeven');
+            var depression, ageThirteen, drugAbuse, diffusedBodyAchesPain;
+            if (ageSeven == "yes") {
+                depression = getradioButtonValue('depression');
+                ageThirteen = getradioButtonValue('ageThirteen');
+                if (ageThirteen == "yes") {
+                    drugAbuse = getradioButtonValue('drugAbuse');
+                    diffusedBodyAchesPain = getradioButtonValue('diffusedBodyAchesPain');
+                }
+                else {
+                    drugAbuse = "";
+                    diffusedBodyAchesPain = "";
+                }
+            }
+            else {
+                depression = "";
+                ageThirteen = "";
+                drugAbuse = "";
+                diffusedBodyAchesPain = "";
+            }
+
+            var thyroid = getradioButtonValue('thyroid');
+            var weightChange = getradioButtonValue('weightChange');
+
+            var blurredVision = getradioButtonValue('blurredVision');
+            var doubleVision = getradioButtonValue('doubleVision');
+            var poorBalance = getradioButtonValue('poorBalance');
+            var swallowingDifficulty = getradioButtonValue('swallowingDifficulty');
+            var nystagmus = getradioButtonValue('nystagmus');
+            var speechChanges = getradioButtonValue('speechChanges');
+            var nausea = getradioButtonValue('nausea');
+            var vomitingWithHeadache = getradioButtonValue('vomitingWithHeadache');
+            var lightSensitivity = getradioButtonValue('lightSensitivity');
+            var soundSensitivity = getradioButtonValue('soundSensitivity');
+            var dizziness = getradioButtonValue('dizziness');
+            var vertigo = getradioButtonValue('vertigo');
+            var fever = getradioButtonValue('fever');
+            var weaknessOneSide = getradioButtonValue('weaknessOneSide');
+            var numbnessTingling = getradioButtonValue('numbnessTingling');
+            var neckPain = getradioButtonValue('neckPain');
+            var staringSpells = getradioButtonValue('staringSpells');
+            var seizuresConvulsions = getradioButtonValue('seizuresConvulsions');
+            var confusionDisorientation = getradioButtonValue('confusionDisorientation');
+            var trauma = getradioButtonValue('trauma');
+            var travelled = getradioButtonValue('travelled');
+            var schoolPerformance = getradioButtonValue('schoolPerformance');
+
+
+            var headacheMedication = getradioButtonValue('headacheMedication');
+            var propranolol, propranololEffective, periactin, periactinEffective, elavil, elavilEffective, topamax, topamaxEffective, depakote, depakoteEffective, tylenol, tylenolEffective, motrinIbuprofen, motrinIbuprofenEffective, aleveNaproxen, aleveNaproxenEffective, midrin, midrinEffective, fioricet, fioricetEffective, zomig, zomigEffective, imitrex, imitrexEffective, relpax, relpaxEffective, bcPowder, bcPowderEffective, ergocaff, ergocaffEffective, migranal, migranalEffective, excedrinMigraine, excedrinMigraineEffective, otherHeadacheMedication, otherHeadacheMedicationEffective;
+
+            if (headacheMedication == "no") {
+                propranolol = ""; propranololEffective = ""; periactin = ""; periactinEffective = ""; elavil = ""; elavilEffective = ""; topamax = ""; topamaxEffective = ""; depakote = ""; depakoteEffective = ""; tylenol = ""; tylenolEffective = ""; motrinIbuprofen = ""; motrinIbuprofenEffective = ""; aleveNaproxen = ""; aleveNaproxenEffective = ""; midrin = ""; midrinEffective = ""; fioricet = ""; fioricetEffective = ""; zomig = ""; zomigEffective = ""; imitrex = ""; imitrexEffective = ""; relpax = ""; relpaxEffective = ""; bcPowder = ""; bcPowderEffective = ""; ergocaff = ""; ergocaffEffective = ""; migranal = ""; migranalEffective = ""; excedrinMigraine = ""; excedrinMigraineEffective = ""; otherHeadacheMedication = ""; otherHeadacheMedicationEffective = "";
+            }
+            else {
+                propranolol = getradioButtonValue('propranolol');
+                periactin = getradioButtonValue('periactin');
+                elavil = getradioButtonValue('elavil');
+                topamax = getradioButtonValue('topamax');
+                depakote = getradioButtonValue('depakote');
+                tylenol = getradioButtonValue('tylenol');
+                motrinIbuprofen = getradioButtonValue('motrinIbuprofen');
+                aleveNaproxen = getradioButtonValue('aleveNaproxen');
+                midrin = getradioButtonValue('midrin');
+                fioricet = getradioButtonValue('fioricet');
+                zomig = getradioButtonValue('zomig');
+                imitrex = getradioButtonValue('imitrex');
+                relpax = getradioButtonValue('relpax');
+                bcPowder = getradioButtonValue('bcPowder');
+                ergocaff = getradioButtonValue('ergocaff');
+                migranal = getradioButtonValue('migranal');
+                excedrinMigraine = getradioButtonValue('excedrinMigraine');
+                otherHeadacheMedication = getradioButtonValue('otherHeadacheMedication');
+                if (propranolol == "yes") {
+                    propranololEffective = getradioButtonValue('propranololEffective');
+                }
+                else {
+                    propranololEffective = "";
+                }
+
+                if (periactin == "yes") {
+                    periactinEffective = getradioButtonValue('periactinEffective');
+                }
+                else {
+                    periactinEffective = "";
+                }
+
+                if (elavil == "yes") {
+                    elavilEffective = getradioButtonValue('elavilEffective');
+                }
+                else {
+                    elavilEffective = "";
+                }
+
+                if (topamax == "yes") {
+                    topamaxEffective = getradioButtonValue('topamaxEffective');
+                }
+                else {
+                    topamaxEffective = "";
+                }
+
+                if (depakote == "yes") {
+                    depakoteEffective = getradioButtonValue('depakoteEffective');
+                }
+                else {
+                    depakoteEffective = "";
+                }
+
+                if (tylenol == "yes") {
+                    tylenolEffective = getradioButtonValue('tylenolEffective');
+                }
+                else {
+                    tylenolEffective = "";
+                }
+
+                if (motrinIbuprofen == "yes") {
+                    motrinIbuprofenEffective = getradioButtonValue('motrinIbuprofenEffective');
+                }
+                else {
+                    motrinIbuprofenEffective = "";
+                }
+
+                if (aleveNaproxen == "yes") {
+                    aleveNaproxenEffective = getradioButtonValue('aleveNaproxenEffective');
+                }
+                else {
+                    aleveNaproxenEffective = "";
+                }
+
+                if (midrin == "yes") {
+                    midrinEffective = getradioButtonValue('midrinEffective');
+                }
+                else {
+                    midrinEffective = "";
+                }
+
+                if (fioricet == "yes") {
+                    fioricetEffective = getradioButtonValue('fioricetEffective');
+                }
+                else {
+                    fioricetEffective = "";
+                }
+
+                if (zomig == "yes") {
+                    zomigEffective = getradioButtonValue('zomigEffective');
+                }
+                else {
+                    zomigEffective = "";
+                }
+
+                if (imitrex == "yes") {
+                    imitrexEffective = getradioButtonValue('imitrexEffective');
+                }
+                else {
+                    imitrexEffective = "";
+                }
+
+                if (relpax == "yes") {
+                    relpaxEffective = getradioButtonValue('relpaxEffective');
+                }
+                else {
+                    relpaxEffective = "";
+                }
+
+                if (bcPowder == "yes") {
+                    bcPowderEffective = getradioButtonValue('bcPowderEffective');
+                }
+                else {
+                    bcPowderEffective = "";
+                }
+
+                if (ergocaff == "yes") {
+                    ergocaffEffective = getradioButtonValue('ergocaffEffective');
+                }
+                else {
+                    ergocaffEffective = "";
+                }
+
+                if (migranal == "yes") {
+                    migranalEffective = getradioButtonValue('migranalEffective');
+                }
+                else {
+                    migranalEffective = "";
+                }
+
+                if (excedrinMigraine == "yes") {
+                    excedrinMigraineEffective = getradioButtonValue('excedrinMigraineEffective');
+                }
+                else {
+                    excedrinMigraineEffective = "";
+                }
+
+                if (otherHeadacheMedication == "yes") {
+                    otherHeadacheMedicationEffective = getradioButtonValue('otherHeadacheMedicationEffective');
+                }
+                else {
+                    otherHeadacheMedicationEffective = "";
+                }
+
+            }
+
+            var newRef = xxxRef.push();
+            newRef.set({
+                chartNumber: chartNumber,
+                completedByRelationship: completedByRelationship,
+                trashed: false,
+                createdAt: Date.now(),
+                duration: duration,
+                kind: kind,
+                located: located,
+                progression: progression,
+                gottenWorse: gottenWorse,
+                sinceWhen: sinceWhen,
+                worsensWith: worsensWith,
+                severity: severity,
+                severityScale: severityScale,
+                nature: nature,
+                quality: quality,
+                frequency: frequency,
+                timing: timing,
+                wakeUpFromSleep: wakeUpFromSleep,
+                vomiting: vomiting,
+                aura: aura,
+                treatement: treatement,
+                painKillers: painKillers,
+                sleepingResolves: sleepingResolves,
+                looksIll: looksIll,
+                appetiteLoss: appetiteLoss,
+                allergiesHx: allergiesHx,
+                skipMeals: skipMeals,
+                visionChecked: visionChecked,
+                glassesPrescribed: glassesPrescribed,
+                wearsGlasses: wearsGlasses,
+                snoringHx: snoringHx,
+                snoringWakeUp: snoringWakeUp,
+                sodaFrequency: sodaFrequency,
+                chocolateFrequency: chocolateFrequency,
+                smokedMeatsFrequency: smokedMeatsFrequency,
+                missedSchool: missedSchool,
+                vitaminsSteroids: vitaminsSteroids,
+                sinus: sinus,
+                fallingAsleep: fallingAsleep,
+                maintainingSleep: maintainingSleep,
+                ageSeven: ageSeven,
+                depression: depression,
+                ageThirteen: ageThirteen,
+                drugAbuse: drugAbuse,
+                diffusedBodyAchesPain: diffusedBodyAchesPain,
+                thyroid: thyroid,
+                weightChange: weightChange,
+
+                blurredVision: blurredVision,
+                doubleVision: doubleVision,
+                poorBalance: poorBalance,
+                swallowingDifficulty: swallowingDifficulty,
+                nystagmus: nystagmus,
+                speechChanges: speechChanges,
+                nausea: nausea,
+                vomitingWithHeadache: vomitingWithHeadache,
+                lightSensitivity: lightSensitivity,
+                soundSensitivity: soundSensitivity,
+                dizziness: dizziness,
+                vertigo: vertigo,
+                fever: fever,
+                weaknessOneSide: weaknessOneSide,
+                numbnessTingling: numbnessTingling,
+                neckPain: neckPain,
+                staringSpells: staringSpells,
+                seizuresConvulsions: seizuresConvulsions,
+                confusionDisorientation: confusionDisorientation,
+                trauma: trauma,
+                travelled: travelled,
+                schoolPerformance: schoolPerformance,
+
+                headacheMedication: headacheMedication,
+                propranolol: propranolol,
+                propranololEffective: propranololEffective,
+                periactin: periactin,
+                periactinEffective: periactinEffective,
+                elavil: elavil,
+                elavilEffective: elavilEffective,
+                topamax: topamax,
+                topamaxEffective: topamaxEffective,
+                depakote: depakote,
+                depakoteEffective: depakoteEffective,
+                tylenol: tylenol,
+                tylenolEffective: tylenolEffective,
+                motrinIbuprofen: motrinIbuprofen,
+                motrinIbuprofenEffective: motrinIbuprofenEffective,
+                aleveNaproxen: aleveNaproxen,
+                aleveNaproxenEffective: aleveNaproxenEffective,
+                midrin: midrin,
+                midrinEffective: midrinEffective,
+                fioricet: fioricet,
+                fioricetEffective: fioricetEffective,
+                zomig: zomig,
+                zomigEffective: zomigEffective,
+                imitrex: imitrex,
+                imitrexEffective: imitrexEffective,
+                relpax: relpax,
+                relpaxEffective: relpaxEffective,
+                bcPowder: bcPowder,
+                bcPowderEffective: bcPowderEffective,
+                ergocaff: ergocaff,
+                ergocaffEffective: ergocaffEffective,
+                migranal: migranal,
+                migranalEffective: migranalEffective,
+                excedrinMigraine: excedrinMigraine,
+                excedrinMigraineEffective: excedrinMigraineEffective,
+                otherHeadacheMedication: otherHeadacheMedication,
+                otherHeadacheMedicationEffective: otherHeadacheMedicationEffective
+            });
+            alert("Successfully Submitted");
+            $('#headacheForm')[0].reset();
+            window.location = "../";
+        }
+
+
+        function getCheckboxValues(checkboxClassName) {
+            var chkArray = [];
+
+            // also possible to do 
+            // $.each($("input[name='" + checkboxName +"']:checked"), function(){
+            $.each($("input[class='" + checkboxClassName + "']:checked"), function () {
+                chkArray.push($(this).val());
+            });
+
+            if (chkArray.length == 0) {
+                chkArray.push("~");
+            }
+
+            return chkArray;
+        }
+
+        function getradioButtonValue(radioButtonName) {
+            return $("input[name='" + radioButtonName + "']:checked").val();
+        }
+
+        function getInputValues(id) {
+            return document.getElementById(id).value;
+        }
+
+
+        $(function () {  // short for Document ready
+
+            $("#resetForm").click(function () {
+                $("#inputForm")[0].reset();
+            });
+
+            $("input:radio[name='ageSeven']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesAgeSeven").show();
+                    $('input[name="depression"]').prop('disabled', false);
+                    $('input[name="ageThirteen"]').prop('disabled', false);
+                    $('input[name="drugAbuse"]').prop('disabled', true);
+                    $('input[name="diffusedBodyAchesPain"]').prop('disabled', true);
+                }
+                else {
+                    $(".yesAgeSeven").hide();
+                    //$(".yesAgeSeven").prop("disabled", true);
+                    $(".yesAgeThirteen").hide();
+                    $('input[name="depression"]').prop('checked', false);
+                    $('input[name="ageThirteen"]').prop('checked', false);
+                    $('input[name="drugAbuse"]').prop('checked', false);
+                    $('input[name="diffusedBodyAchesPain"]').prop('checked', false);
+                    $('input[name="depression"]').prop('disabled', true);
+                    $('input[name="ageThirteen"]').prop('disabled', true);
+                    $('input[name="drugAbuse"]').prop('disabled', true);
+                    $('input[name="diffusedBodyAchesPain"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='ageThirteen']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesAgeThirteen").show();
+                    $('input[name="ageThirteen"]').prop('disabled', false);
+                    $('input[name="drugAbuse"]').prop('disabled', false);
+                    $('input[name="diffusedBodyAchesPain"]').prop('disabled', false);
+
+                }
+                else {
+                    $(".yesAgeThirteen").hide();
+                    //$('input[name="ageThirteen"]').prop('checked', false);
+                    $('input[name="drugAbuse"]').prop('checked', false);
+                    $('input[name="diffusedBodyAchesPain"]').prop('checked', false);
+                    $('input[name="ageThirteen"]').prop('disabled', false);
+                    $('input[name="drugAbuse"]').prop('disabled', true);
+                    $('input[name="diffusedBodyAchesPain"]').prop('disabled', true);
+
+                }
+            });
+
+
+            $("input:radio[name='progression']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "gotten worse") {
+                    $(".gottenWorse").show();
+                    $('input[name="gottenWorse"]').prop('disabled', false);
+                    $('input[name="sinceWhen"]').prop('disabled', false);
+                }
+                else {
+                    $(".gottenWorse").hide();
+                    $('input[name="gottenWorse"]').prop('checked', false);
+                    $('input[name="gottenWorse"]').prop('disabled', true);
+                    $('input[name="sinceWhen"]').prop('checked', false);
+                    $('input[name="sinceWhen"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='visionChecked']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesVisionChecked").show();
+                    $('input[name="glassesPrescribed"]').prop('disabled', false);
+
+                }
+                else {
+                    $(".yesVisionChecked").hide();
+                    $(".yesGlassesPrescribed").hide();
+                    $('input[name="glassesPrescribed"]').prop('checked', false);
+                    $('input[name="glassesPrescribed"]').prop('disabled', true);
+                    $('input[name="wearsGlasses"]').prop('checked', false);
+                    $('input[name="wearsGlasses"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='glassesPrescribed']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesGlassesPrescribed").show();
+                    $('input[name="wearsGlasses"]').prop('checked', false);
+                    $('input[name="wearsGlasses"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesGlassesPrescribed").hide();
+                    $('input[name="wearsGlasses"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='snoringHx']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesSnoringHx").show();
+                    $('input[name="snoringWakeUp"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesSnoringHx").hide();
+                    $('input[name="snoringWakeUp"]').prop('disabled', true);
+                    $('input[name="snoringWakeUp"]').prop('checked', false);
+                }
+            });
+
+            $("input:radio[name='propranolol']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesPropranolol").show();
+                    $('input[name="propranololEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesPropranolol").hide();
+                    $('input[name="propranololEffective"]').prop('checked', false);
+                    $('input[name="propranololEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='periactin']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesPeriactin").show();
+                    $('input[name="periactinEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesPeriactin").hide();
+                    $('input[name="periactinEffective"]').prop('checked', false);
+                    $('input[name="periactinEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='elavil']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesElavil").show();
+                    $('input[name="elavilEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesElavil").hide();
+                    $('input[name="elavilEffective"]').prop('checked', false);
+                    $('input[name="elavilEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='topamax']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesTopamax").show();
+                    $('input[name="topamaxEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesTopamax").hide();
+                    $('input[name="topamaxEffective"]').prop('checked', false);
+                    $('input[name="topamaxEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='depakote']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesDepakote").show();
+                    $('input[name="depakoteEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesDepakote").hide();
+                    $('input[name="depakoteEffective"]').prop('checked', false);
+                    $('input[name="depakoteEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='tylenol']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesTylenol").show();
+                    $('input[name="tylenolEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesTylenol").hide();
+                    $('input[name="tylenolEffective"]').prop('checked', false);
+                    $('input[name="tylenolEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='motrinIbuprofen']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesMotrinIbuprofen").show();
+                    $('input[name="motrinIbuprofenEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesMotrinIbuprofen").hide();
+                    $('input[name="motrinIbuprofenEffective"]').prop('checked', false);
+                    $('input[name="motrinIbuprofenEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='aleveNaproxen']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesAleveNaproxen").show();
+                    $('input[name="aleveNaproxenEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesAleveNaproxen").hide();
+                    $('input[name="aleveNaproxenEffective"]').prop('checked', false);
+                    $('input[name="aleveNaproxenEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='midrin']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesMidrin").show();
+                    $('input[name="midrinEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesMidrin").hide();
+                    $('input[name="midrinEffective"]').prop('checked', false);
+                    $('input[name="midrinEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='fioricet']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesFioricet").show();
+                    $('input[name="fioricetEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesFioricet").hide();
+                    $('input[name="fioricetEffective"]').prop('checked', false);
+                    $('input[name="fioricetEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='zomig']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesZomig").show();
+                    $('input[name="zomigEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesZomig").hide();
+                    $('input[name="zomigEffective"]').prop('checked', false);
+                    $('input[name="zomigEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='imitrex']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesImitrex").show();
+                    $('input[name="imitrexEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesImitrex").hide();
+                    $('input[name="imitrexEffective"]').prop('checked', false);
+                    $('input[name="imitrexEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='relpax']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesRelpax").show();
+                    $('input[name="relpaxEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesRelpax").hide();
+                    $('input[name="relpaxEffective"]').prop('checked', false);
+                    $('input[name="relpaxEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='bcPowder']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesBcPowder").show();
+                    $('input[name="bcPowderEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesBcPowder").hide();
+                    $('input[name="bcPowderEffective"]').prop('checked', false);
+                    $('input[name="bcPowderEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='ergocaff']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesErgocaff").show();
+                    $('input[name="ergocaffEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesErgocaff").hide();
+                    $('input[name="ergocaffEffective"]').prop('checked', false);
+                    $('input[name="ergocaffEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='migranal']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesMigranal").show();
+                    $('input[name="migranalEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesMigranal").hide();
+                    $('input[name="migranalEffective"]').prop('checked', false);
+                    $('input[name="migranalEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='excedrinMigraine']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesExcedrinMigraine").show();
+                    $('input[name="excedrinMigraineEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesExcedrinMigraine").hide();
+                    $('input[name="excedrinMigraineEffective"]').prop('checked', false);
+                    $('input[name="excedrinMigraineEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='otherHeadacheMedication']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".yesOtherHeadacheMedication").show();
+                    $('input[name="otherHeadacheMedicationEffective"]').prop('disabled', false);
+                }
+                else {
+                    $(".yesOtherHeadacheMedication").hide();
+                    $('input[name="otherHeadacheMedicationEffective"]').prop('checked', false);
+                    $('input[name="otherHeadacheMedicationEffective"]').prop('disabled', true);
+                }
+            });
+
+            $("input:radio[name='headacheMedication']").change(function () {
+                var radioVal = $(this).val();
+                if (radioVal == "yes") {
+                    $(".allMedications").show();
+
+                    $('input[name="propranolol"]').prop('disabled', false);
+                    $('input[name="propranololEffective"]').prop('checked', false);
+                    $('input[name="propranololEffective"]').prop('disabled', true);
+
+                    $('input[name="periactin"]').prop('disabled', false);
+                    $('input[name="periactinEffective"]').prop('checked', false);
+                    $('input[name="periactinEffective"]').prop('disabled', true);
+
+                    $('input[name="elavil"]').prop('disabled', false);
+                    $('input[name="elavilEffective"]').prop('checked', false);
+                    $('input[name="elavilEffective"]').prop('disabled', true);
+
+                    $('input[name="topamax"]').prop('disabled', false);
+                    $('input[name="topamaxEffective"]').prop('checked', false);
+                    $('input[name="topamaxEffective"]').prop('disabled', true);
+
+                    $('input[name="depakote"]').prop('disabled', false);
+                    $('input[name="depakoteEffective"]').prop('checked', false);
+                    $('input[name="depakoteEffective"]').prop('disabled', true);
+
+                    $('input[name="tylenol"]').prop('disabled', false);
+                    $('input[name="tylenolEffective"]').prop('checked', false);
+                    $('input[name="tylenolEffective"]').prop('disabled', true);
+
+                    $('input[name="motrinIbuprofen"]').prop('disabled', false);
+                    $('input[name="motrinIbuprofenEffective"]').prop('checked', false);
+                    $('input[name="motrinIbuprofenEffective"]').prop('disabled', true);
+
+                    $('input[name="aleveNaproxen"]').prop('disabled', false);
+                    $('input[name="aleveNaproxenEffective"]').prop('checked', false);
+                    $('input[name="aleveNaproxenEffective"]').prop('disabled', true);
+
+                    $('input[name="midrin"]').prop('disabled', false);
+                    $('input[name="midrinEffective"]').prop('checked', false);
+                    $('input[name="midrinEffective"]').prop('disabled', true);
+
+                    $('input[name="fioricet"]').prop('disabled', false);
+                    $('input[name="fioricetEffective"]').prop('checked', false);
+                    $('input[name="fioricetEffective"]').prop('disabled', true);
+
+                    $('input[name="zomig"]').prop('disabled', false);
+                    $('input[name="zomigEffective"]').prop('checked', false);
+                    $('input[name="zomigEffective"]').prop('disabled', true);
+
+                    $('input[name="imitrex"]').prop('disabled', false);
+                    $('input[name="imitrexEffective"]').prop('checked', false);
+                    $('input[name="imitrexEffective"]').prop('disabled', true);
+
+                    $('input[name="relpax"]').prop('disabled', false);
+                    $('input[name="relpaxEffective"]').prop('checked', false);
+                    $('input[name="relpaxEffective"]').prop('disabled', true);
+
+                    $('input[name="bcPowder"]').prop('disabled', false);
+                    $('input[name="bcPowderEffective"]').prop('checked', false);
+                    $('input[name="bcPowderEffective"]').prop('disabled', true);
+
+                    $('input[name="ergocaff"]').prop('disabled', false);
+                    $('input[name="ergocaffEffective"]').prop('checked', false);
+                    $('input[name="ergocaffEffective"]').prop('disabled', true);
+
+                    $('input[name="migranal"]').prop('disabled', false);
+                    $('input[name="migranalEffective"]').prop('checked', false);
+                    $('input[name="migranalEffective"]').prop('disabled', true);
+
+                    $('input[name="excedrinMigraine"]').prop('disabled', false);
+                    $('input[name="excedrinMigraineEffective"]').prop('checked', false);
+                    $('input[name="excedrinMigraineEffective"]').prop('disabled', true);
+
+                    $('input[name="otherHeadacheMedication"]').prop('disabled', false);
+                    $('input[name="otherHeadacheMedicationEffective"]').prop('checked', false);
+                    $('input[name="otherHeadacheMedicationEffective"]').prop('disabled', true);
+
+                }
+                else {
+                    $(".allMedications").hide();
+
+                    $(".yesPropranolol").hide();
+                    $('input[name="propranolol"]').prop('checked', false);
+                    $('input[name="propranolol"]').prop('disabled', true);
+                    $('input[name="propranololEffective"]').prop('checked', false);
+                    $('input[name="propranololEffective"]').prop('disabled', true);
+
+                    $(".yesPeriactin").hide();
+                    $('input[name="periactin"]').prop('checked', false);
+                    $('input[name="periactin"]').prop('disabled', true);
+                    $('input[name="periactinEffective"]').prop('checked', false);
+                    $('input[name="periactinEffective"]').prop('disabled', true);
+
+                    $(".yesElavil").hide();
+                    $('input[name="elavil"]').prop('checked', false);
+                    $('input[name="elavil"]').prop('disabled', true);
+                    $('input[name="elavilEffective"]').prop('checked', false);
+                    $('input[name="elavilEffective"]').prop('disabled', true);
+
+                    $(".yesTopamax").hide();
+                    $('input[name="topamax"]').prop('checked', false);
+                    $('input[name="topamax"]').prop('disabled', true);
+                    $('input[name="topamaxEffective"]').prop('checked', false);
+                    $('input[name="topamaxEffective"]').prop('disabled', true);
+
+                    $(".yesDepakote").hide();
+                    $('input[name="depakote"]').prop('checked', false);
+                    $('input[name="depakote"]').prop('disabled', true);
+                    $('input[name="depakoteEffective"]').prop('checked', false);
+                    $('input[name="depakoteEffective"]').prop('disabled', true);
+
+                    $(".yesTylenol").hide();
+                    $('input[name="tylenol"]').prop('checked', false);
+                    $('input[name="tylenol"]').prop('disabled', true);
+                    $('input[name="tylenolEffective"]').prop('checked', false);
+                    $('input[name="tylenolEffective"]').prop('disabled', true);
+
+                    $(".yesMotrinIbuprofen").hide();
+                    $('input[name="motrinIbuprofen"]').prop('checked', false);
+                    $('input[name="motrinIbuprofen"]').prop('disabled', true);
+                    $('input[name="motrinIbuprofenEffective"]').prop('checked', false);
+                    $('input[name="motrinIbuprofenEffective"]').prop('disabled', true);
+
+                    $(".yesAleveNaproxen").hide();
+                    $('input[name="aleveNaproxen"]').prop('checked', false);
+                    $('input[name="aleveNaproxen"]').prop('disabled', true);
+                    $('input[name="aleveNaproxenEffective"]').prop('checked', false);
+                    $('input[name="aleveNaproxenEffective"]').prop('disabled', true);
+
+                    $(".yesMidrin").hide();
+                    $('input[name="midrin"]').prop('checked', false);
+                    $('input[name="midrin"]').prop('disabled', true);
+                    $('input[name="midrinEffective"]').prop('checked', false);
+                    $('input[name="midrinEffective"]').prop('disabled', true);
+
+                    $(".yesFioricet").hide();
+                    $('input[name="fioricet"]').prop('checked', false);
+                    $('input[name="fioricet"]').prop('disabled', true);
+                    $('input[name="fioricetEffective"]').prop('checked', false);
+                    $('input[name="fioricetEffective"]').prop('disabled', true);
+
+                    $(".yesZomig").hide();
+                    $('input[name="zomig"]').prop('checked', false);
+                    $('input[name="zomig"]').prop('disabled', true);
+                    $('input[name="zomigEffective"]').prop('checked', false);
+                    $('input[name="zomigEffective"]').prop('disabled', true);
+
+                    $(".yesImitrex").hide();
+                    $('input[name="imitrex"]').prop('checked', false);
+                    $('input[name="imitrex"]').prop('disabled', true);
+                    $('input[name="imitrexEffective"]').prop('checked', false);
+                    $('input[name="imitrexEffective"]').prop('disabled', true);
+
+                    $(".yesRelpax").hide();
+                    $('input[name="relpax"]').prop('checked', false);
+                    $('input[name="relpax"]').prop('disabled', true);
+                    $('input[name="relpaxEffective"]').prop('checked', false);
+                    $('input[name="relpaxEffective"]').prop('disabled', true);
+
+                    $(".yesBcPowder").hide();
+                    $('input[name="bcPowder"]').prop('checked', false);
+                    $('input[name="bcPowder"]').prop('disabled', true);
+                    $('input[name="bcPowderEffective"]').prop('checked', false);
+                    $('input[name="bcPowderEffective"]').prop('disabled', true);
+
+                    $(".yesErgocaff").hide();
+                    $('input[name="ergocaff"]').prop('checked', false);
+                    $('input[name="ergocaff"]').prop('disabled', true);
+                    $('input[name="ergocaffEffective"]').prop('checked', false);
+                    $('input[name="ergocaffEffective"]').prop('disabled', true);
+
+                    $(".yesMigranal").hide();
+                    $('input[name="migranal"]').prop('checked', false);
+                    $('input[name="migranal"]').prop('disabled', true);
+                    $('input[name="migranalEffective"]').prop('checked', false);
+                    $('input[name="migranalEffective"]').prop('disabled', true);
+
+                    $(".yesExcedrinMigraine").hide();
+                    $('input[name="excedrinMigraine"]').prop('checked', false);
+                    $('input[name="excedrinMigraine"]').prop('disabled', true);
+                    $('input[name="excedrinMigraineEffective"]').prop('checked', false);
+                    $('input[name="excedrinMigraineEffective"]').prop('disabled', true);
+
+                    $(".yesOtherHeadacheMedication").hide();
+                    $('input[name="otherHeadacheMedication"]').prop('checked', false);
+                    $('input[name="otherHeadacheMedication"]').prop('disabled', true);
+                    $('input[name="otherHeadacheMedicationEffective"]').prop('checked', false);
+                    $('input[name="otherHeadacheMedicationEffective"]').prop('disabled', true);
+
+
+
+
+
+                }
+            });
+
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>
